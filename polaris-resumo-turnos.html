@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polaris - Produtividade por turno · 21/10/2026</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f4f6fb;color:#1c2340}
+.hero{background:linear-gradient(120deg,#2b3a8f 0%,#4b57c4 60%,#6d75d6 100%);color:#fff;padding:26px 32px 40px}
+.hero h1{margin:10px 0 6px;font-size:2em} .hero p{margin:0;opacity:.85;font-size:.9em}
+.tag{display:inline-block;background:#ffd23f;color:#1c2340;font-weight:700;font-size:.75em;letter-spacing:.04em;padding:5px 12px;border-radius:999px}
+.wrap{padding:0 24px 28px}
+.turno{margin-top:26px}
+.thead{display:flex;align-items:center;gap:12px;margin:0 0 10px} .lider{color:#5a6280;font-size:.9em}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;background:#fff;border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(28,35,64,.08)}
+.card{background:#fff;border:1px solid #e6e9f2;border-radius:12px;padding:16px}
+.card .v{font-size:1.9em;font-weight:800} .card .l{font-size:.82em;color:#5a6280;margin:4px 0 10px;line-height:1.35}
+.pill{display:inline-block;font-size:.75em;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:#dcf5e4;color:#1a7f37} .pill.bad{background:#fde2e2;color:#c62828} .pill.warn{background:#fff1c7;color:#8a6100} .pill.neu{background:#fff4c2;color:#7a5c00}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.panel{background:#fff;border-radius:14px;padding:18px 20px;box-shadow:0 2px 10px rgba(28,35,64,.05);overflow-x:auto}
+.panel h2{font-size:1.1em;margin:0 0 2px} .panel h2 small{font-weight:400;color:#7a829c;font-size:.8em;margin-left:6px}
+.sub{font-size:.82em;color:#7a829c;margin:0 0 12px}
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{text-align:right;font-size:.72em;text-transform:uppercase;letter-spacing:.04em;color:#7a829c;background:#f7f8fc;padding:8px 6px;font-weight:600}
+td{padding:10px 6px;border-bottom:1px solid #eef0f6;text-align:right}
+th:first-child,td:first-child{text-align:left}
+tr.tot td{font-weight:700;border-top:2px solid #1c2340;border-bottom:none}
+.bar{width:120px;height:8px;background:#eceef6;border-radius:4px;overflow:hidden;margin-left:auto} .bar span{display:block;height:100%;background:linear-gradient(90deg,#4b57c4,#6d75d6)}
+.note{font-size:.8em;color:#7a829c;margin-top:12px;line-height:1.4}
+.banner{background:#fff7dc;border:1px solid #f3e0a0;color:#7a5c00;border-radius:10px;padding:10px 14px;font-size:.88em;margin:10px 0 12px}
+.full{grid-column:1 / -1}
+.errs{margin-top:26px;background:#fff;border-radius:14px;padding:18px 20px;box-shadow:0 2px 10px rgba(28,35,64,.05)}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)} .grid{grid-template-columns:1fr}}
+</style></head><body>
+<div class="hero">
+ <span class="tag">21/10/2026 · TURNOS T1, T2 E T3</span>
+ <h1>Produtividade por turno</h1>
+ <p>Produtividade por processo e hora a hora dentro de cada turno · AT do dia 21/10</p>
+</div>
+<div class="wrap">
+
+<div class="turno">
+ <div class="thead"><span class="tag">TURNO T1 · 05:45 → 15:33</span><span class="lider">Líder rhsoares</span></div>
+ <div class="cards">
+  <div class="card"><div class="v">50,8%</div><div class="l">Efetividade do turno (80,0 h efetivas de 157,5 h de processo)</div><span class="pill neu">Sem meta definida</span></div>
+  <div class="card"><div class="v">9.185</div><div class="l">Unidades processadas no turno</div><span class="pill ok">Turno completo</span></div>
+  <div class="card"><div class="v">89%</div><div class="l">AT médio da equipe (21/10, dia inteiro)</div><span class="pill bad">Meta 95%</span></div>
+  <div class="card"><div class="v">65,8 u/h</div><div class="l">open_transfer no turno (meta 80,7 u/h efetivas)</div><span class="pill bad">Abaixo</span></div>
+ </div>
+ <div class="grid">
+  <div class="panel">
+   <h2>Produtividade por processo</h2><p class="sub">turno · efetiva</p>
+   <table><thead><tr><th>Processo</th><th>Unidades</th><th>Efetiva (u/h)</th><th>Meta efetiva</th><th>% da meta</th><th>Situação</th></tr></thead><tbody><tr><td>corrective_count</td><td>688</td><td>38,7</td><td>28,0</td><td>138%</td><td><span class='pill ok'>Acima</span></td></tr><tr><td>cycle_count</td><td>3.871</td><td>150,8</td><td>188,0</td><td>80%</td><td><span class='pill bad'>Abaixo</span></td></tr><tr><td>inbound_audit</td><td>2.277</td><td>130,7</td><td>153,9</td><td>85%</td><td><span class='pill bad'>Abaixo</span></td></tr><tr><td>movable_audit</td><td>1.470</td><td>367,0</td><td>306,2</td><td>120%</td><td><span class='pill ok'>Acima</span></td></tr><tr><td>open_transfer</td><td>174</td><td>65,8</td><td>80,7</td><td>82%</td><td><span class='pill bad'>Abaixo</span></td></tr><tr><td>stock_audit</td><td>705</td><td>56,3</td><td>62,6</td><td>90%</td><td><span class='pill bad'>Abaixo</span></td></tr></tbody></table>
+   <p class="note">Somado a partir do detalhe hora a hora do turno. Não somar produtividade entre processos.</p>
+  </div>
+  <div class="panel">
+   <h2>Hora a hora <small>todos os processos, horas-operador · turno</small></h2>
+   <table><thead><tr><th>Hora</th><th>Unidades</th><th>Processo (h)</th><th>Efetivo (h)</th><th>% efetivo</th></tr></thead><tbody><tr><td>05h</td><td>0</td><td>2,84</td><td>0,00</td><td><div class='bar'><span style='width:0%'></span></div></td></tr><tr><td>06h</td><td>265</td><td>15,03</td><td>2,56</td><td><div class='bar'><span style='width:17%'></span></div></td></tr><tr><td>07h</td><td>934</td><td>16,59</td><td>7,18</td><td><div class='bar'><span style='width:43%'></span></div></td></tr><tr><td>08h</td><td>1.025</td><td>18,60</td><td>10,87</td><td><div class='bar'><span style='width:58%'></span></div></td></tr><tr><td>09h</td><td>1.207</td><td>18,65</td><td>11,28</td><td><div class='bar'><span style='width:60%'></span></div></td></tr><tr><td>10h</td><td>1.668</td><td>18,71</td><td>10,73</td><td><div class='bar'><span style='width:57%'></span></div></td></tr><tr><td>11h</td><td>646</td><td>5,21</td><td>3,19</td><td><div class='bar'><span style='width:61%'></span></div></td></tr><tr><td>12h</td><td>688</td><td>14,14</td><td>7,63</td><td><div class='bar'><span style='width:54%'></span></div></td></tr><tr><td>13h</td><td>1.011</td><td>17,29</td><td>10,01</td><td><div class='bar'><span style='width:58%'></span></div></td></tr><tr><td>14h</td><td>1.345</td><td>18,74</td><td>12,14</td><td><div class='bar'><span style='width:65%'></span></div></td></tr><tr><td>15h</td><td>396</td><td>11,67</td><td>4,46</td><td><div class='bar'><span style='width:38%'></span></div></td></tr><tr class='tot'><td>Total do turno</td><td>9.185</td><td>157,48</td><td>80,04</td><td>51%</td></tr></tbody></table>
+   <p class="note">A ferramenta agrupa por hora cheia.</p>
+  </div>
+  <div class="panel full">
+   <h2>AT por operador <small>meta 95% · dia 21/10 inteiro (a ferramenta de AT não filtra por turno)</small></h2>
+   <div class="banner">AT é calculado por dia. Os valores abaixo são do dia 21/10 inteiro, não do turno.</div>
+   <table><thead><tr><th>Operador</th><th>AT</th><th>TND (h)</th><th>EIT (h)</th><th>Situação</th></tr></thead><tbody><tr><td>mugraciano</td><td>0,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>edrodrigues</td><td>75,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>giobezerra</td><td>77,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>lucdsilva</td><td>77,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>rosmatos</td><td>88,0%</td><td>0,00</td><td>0,22</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>josecsi</td><td>96,0%</td><td>0,00</td><td>0,05</td><td><span class='pill ok'>OK</span></td></tr><tr><td>hugsreis</td><td>96,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>luchsantos</td><td>97,0%</td><td>0,70</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>edevangelist</td><td>98,0%</td><td>0,00</td><td>0,71</td><td><span class='pill ok'>OK</span></td></tr><tr><td>dajferreira</td><td>98,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>emessantos</td><td>98,0%</td><td>0,01</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>cjaguiar</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>kersantos</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>arirferreira</td><td>100,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>ysxavier</td><td>100,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>mblima</td><td>100,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>eedomingos</td><td>100,0%</td><td>0,05</td><td>0,11</td><td><span class='pill ok'>OK</span></td></tr><tr><td>antoniocar</td><td>100,0%</td><td>0,50</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>giosalmeida</td><td>100,0%</td><td>0,01</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr></tbody></table>
+   <p class="note">Abaixo de 95%: mugraciano, edrodrigues, giobezerra, lucdsilva, rosmatos.</p>
+  </div>
+ </div>
+</div>
+<div class="turno">
+ <div class="thead"><span class="tag">TURNO T2 · 14:30 → 00:03</span><span class="lider">Líder elarocha</span></div>
+ <div class="cards">
+  <div class="card"><div class="v">55,8%</div><div class="l">Efetividade do turno (113,0 h efetivas de 202,5 h de processo)</div><span class="pill neu">Sem meta definida</span></div>
+  <div class="card"><div class="v">15.842</div><div class="l">Unidades processadas no turno</div><span class="pill ok">Turno completo</span></div>
+  <div class="card"><div class="v">96%</div><div class="l">AT médio da equipe (21/10, dia inteiro)</div><span class="pill ok">Meta 95%</span></div>
+  <div class="card"><div class="v">56,8 u/h</div><div class="l">open_transfer no turno (meta 80,7 u/h efetivas)</div><span class="pill bad">Abaixo</span></div>
+ </div>
+ <div class="grid">
+  <div class="panel">
+   <h2>Produtividade por processo</h2><p class="sub">turno · efetiva</p>
+   <table><thead><tr><th>Processo</th><th>Unidades</th><th>Efetiva (u/h)</th><th>Meta efetiva</th><th>% da meta</th><th>Situação</th></tr></thead><tbody><tr><td>corrective_count</td><td>674</td><td>41,6</td><td>28,0</td><td>149%</td><td><span class='pill ok'>Acima</span></td></tr><tr><td>cycle_count</td><td>9.295</td><td>205,7</td><td>188,0</td><td>109%</td><td><span class='pill ok'>Acima</span></td></tr><tr><td>inbound_audit</td><td>2.758</td><td>131,8</td><td>153,9</td><td>86%</td><td><span class='pill bad'>Abaixo</span></td></tr><tr><td>movable_audit</td><td>2.159</td><td>213,6</td><td>306,2</td><td>70%</td><td><span class='pill bad'>Abaixo</span></td></tr><tr><td>open_transfer</td><td>449</td><td>56,8</td><td>80,7</td><td>70%</td><td><span class='pill bad'>Abaixo</span></td></tr><tr><td>stock_audit</td><td>391</td><td>50,1</td><td>62,6</td><td>80%</td><td><span class='pill bad'>Abaixo</span></td></tr></tbody></table>
+   <p class="note">Somado a partir do detalhe hora a hora do turno. Não somar produtividade entre processos.</p>
+  </div>
+  <div class="panel">
+   <h2>Hora a hora <small>todos os processos, horas-operador · turno</small></h2>
+   <table><thead><tr><th>Hora</th><th>Unidades</th><th>Processo (h)</th><th>Efetivo (h)</th><th>% efetivo</th></tr></thead><tbody><tr><td>14h</td><td>3</td><td>7,73</td><td>0,27</td><td><div class='bar'><span style='width:4%'></span></div></td></tr><tr><td>15h</td><td>910</td><td>20,20</td><td>8,28</td><td><div class='bar'><span style='width:41%'></span></div></td></tr><tr><td>16h</td><td>1.813</td><td>24,40</td><td>15,32</td><td><div class='bar'><span style='width:63%'></span></div></td></tr><tr><td>17h</td><td>1.858</td><td>24,64</td><td>16,23</td><td><div class='bar'><span style='width:66%'></span></div></td></tr><tr><td>18h</td><td>1.446</td><td>24,63</td><td>15,40</td><td><div class='bar'><span style='width:63%'></span></div></td></tr><tr><td>19h</td><td>1.285</td><td>18,43</td><td>10,69</td><td><div class='bar'><span style='width:58%'></span></div></td></tr><tr><td>20h</td><td>270</td><td>7,01</td><td>2,94</td><td><div class='bar'><span style='width:42%'></span></div></td></tr><tr><td>21h</td><td>2.609</td><td>24,83</td><td>15,05</td><td><div class='bar'><span style='width:61%'></span></div></td></tr><tr><td>22h</td><td>4.059</td><td>24,95</td><td>16,56</td><td><div class='bar'><span style='width:66%'></span></div></td></tr><tr><td>23h</td><td>1.589</td><td>24,75</td><td>12,22</td><td><div class='bar'><span style='width:49%'></span></div></td></tr><tr><td>00h</td><td>0</td><td>0,89</td><td>0,00</td><td><div class='bar'><span style='width:0%'></span></div></td></tr><tr class='tot'><td>Total do turno</td><td>15.842</td><td>202,45</td><td>112,95</td><td>56%</td></tr></tbody></table>
+   <p class="note">A ferramenta agrupa por hora cheia.</p>
+  </div>
+  <div class="panel full">
+   <h2>AT por operador <small>meta 95% · dia 21/10 inteiro (a ferramenta de AT não filtra por turno)</small></h2>
+   <div class="banner">AT é calculado por dia. Os valores abaixo são do dia 21/10 inteiro, não do turno.</div>
+   <table><thead><tr><th>Operador</th><th>AT</th><th>TND (h)</th><th>EIT (h)</th><th>Situação</th></tr></thead><tbody><tr><td>lloerti</td><td>88,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>francsateles</td><td>89,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>afaerodrigue</td><td>90,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>dacarmo</td><td>91,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>alicesmorais</td><td>91,0%</td><td>0,00</td><td>0,03</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>clecastro</td><td>91,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>marcosbabarr</td><td>94,0%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>evandrolsilv</td><td>95,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>hennunes</td><td>98,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>oaosansantos</td><td>98,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>comenezes</td><td>98,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>ycfreire</td><td>99,0%</td><td>0,01</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>jhonatacsant</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>jjssena</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>mauricolivei</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>hapinheiro</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>fabmsantos</td><td>99,0%</td><td>0,00</td><td>0,17</td><td><span class='pill ok'>OK</span></td></tr><tr><td>larissabsant</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>romaximo</td><td>99,0%</td><td>0,00</td><td>0,15</td><td><span class='pill ok'>OK</span></td></tr><tr><td>jackssantana</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>pdjunior</td><td>99,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>scicerosi</td><td>100,0%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr></tbody></table>
+   <p class="note">Abaixo de 95%: lloerti, francsateles, afaerodrigue, dacarmo, alicesmorais, clecastro, marcosbabarr.</p>
+  </div>
+ </div>
+</div>
+<div class="turno">
+ <div class="thead"><span class="tag">TURNO T3 · 23:05 → 07:50</span><span class="lider">Líder wdossantos</span></div>
+ <div class="cards">
+  <div class="card"><div class="v">50,0%</div><div class="l">Efetividade do turno (80,6 h efetivas de 161,3 h de processo)</div><span class="pill neu">Sem meta definida</span></div>
+  <div class="card"><div class="v">6.286</div><div class="l">Unidades processadas no turno</div><span class="pill ok">Turno completo</span></div>
+  <div class="card"><div class="v">98,3%</div><div class="l">AT médio da equipe (21/10, dia inteiro)</div><span class="pill ok">Meta 95%</span></div>
+  <div class="card"><div class="v">40,1 u/h</div><div class="l">open_transfer no turno (meta 80,7 u/h efetivas)</div><span class="pill bad">Abaixo</span></div>
+ </div>
+ <div class="grid">
+  <div class="panel">
+   <h2>Produtividade por processo</h2><p class="sub">turno · efetiva</p>
+   <table><thead><tr><th>Processo</th><th>Unidades</th><th>Efetiva (u/h)</th><th>Meta efetiva</th><th>% da meta</th><th>Situação</th></tr></thead><tbody><tr><td>corrective_count</td><td>364</td><td>21,2</td><td>28,0</td><td>76%</td><td><span class='pill bad'>Abaixo</span></td></tr><tr><td>cycle_count</td><td>2.278</td><td>111,0</td><td>188,0</td><td>59%</td><td><span class='pill bad'>Muito abaixo</span></td></tr><tr><td>inbound_audit</td><td>1.493</td><td>84,4</td><td>153,9</td><td>55%</td><td><span class='pill bad'>Muito abaixo</span></td></tr><tr><td>movable_audit</td><td>1.167</td><td>226,1</td><td>306,2</td><td>74%</td><td><span class='pill bad'>Abaixo</span></td></tr><tr><td>open_transfer</td><td>240</td><td>40,1</td><td>80,7</td><td>50%</td><td><span class='pill bad'>Muito abaixo</span></td></tr><tr><td>stock_audit</td><td>744</td><td>52,8</td><td>62,6</td><td>84%</td><td><span class='pill bad'>Abaixo</span></td></tr></tbody></table>
+   <p class="note">Somado a partir do detalhe hora a hora do turno. Não somar produtividade entre processos.</p>
+  </div>
+  <div class="panel">
+   <h2>Hora a hora <small>todos os processos, horas-operador · turno</small></h2>
+   <table><thead><tr><th>Hora</th><th>Unidades</th><th>Processo (h)</th><th>Efetivo (h)</th><th>% efetivo</th></tr></thead><tbody><tr><td>23h</td><td>302</td><td>15,90</td><td>5,14</td><td><div class='bar'><span style='width:32%'></span></div></td></tr><tr><td>00h</td><td>1.276</td><td>19,52</td><td>13,33</td><td><div class='bar'><span style='width:68%'></span></div></td></tr><tr><td>01h</td><td>1.325</td><td>21,97</td><td>13,92</td><td><div class='bar'><span style='width:63%'></span></div></td></tr><tr><td>02h</td><td>633</td><td>18,82</td><td>7,56</td><td><div class='bar'><span style='width:40%'></span></div></td></tr><tr><td>03h</td><td>51</td><td>3,71</td><td>1,46</td><td><div class='bar'><span style='width:39%'></span></div></td></tr><tr><td>04h</td><td>456</td><td>18,90</td><td>6,57</td><td><div class='bar'><span style='width:35%'></span></div></td></tr><tr><td>05h</td><td>890</td><td>22,00</td><td>11,64</td><td><div class='bar'><span style='width:53%'></span></div></td></tr><tr><td>06h</td><td>892</td><td>21,62</td><td>12,63</td><td><div class='bar'><span style='width:58%'></span></div></td></tr><tr><td>07h</td><td>461</td><td>18,84</td><td>8,38</td><td><div class='bar'><span style='width:44%'></span></div></td></tr><tr class='tot'><td>Total do turno</td><td>6.286</td><td>161,26</td><td>80,62</td><td>50%</td></tr></tbody></table>
+   <p class="note">A ferramenta agrupa por hora cheia.</p>
+  </div>
+  <div class="panel full">
+   <h2>AT por operador <small>meta 95% · dia 21/10 inteiro (a ferramenta de AT não filtra por turno)</small></h2>
+   <div class="banner">AT é calculado por dia. Os valores abaixo são do dia 21/10 inteiro, não do turno.</div>
+   <table><thead><tr><th>Operador</th><th>AT</th><th>TND (h)</th><th>EIT (h)</th><th>Situação</th></tr></thead><tbody><tr><td>luipires</td><td>87,2%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>evdemelo</td><td>88,2%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>danieloli</td><td>88,5%</td><td>0,00</td><td>1,08</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>dimoreira</td><td>90,1%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>rcosoliveira</td><td>93,6%</td><td>0,00</td><td>0,00</td><td><span class='pill bad'>Abaixo da meta</span></td></tr><tr><td>matrgomes</td><td>98,5%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>rirbbatista</td><td>99,0%</td><td>0,00</td><td>0,80</td><td><span class='pill ok'>OK</span></td></tr><tr><td>wglaurang</td><td>99,4%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>leanddasilva</td><td>99,6%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>carlosedalme</td><td>99,6%</td><td>0,00</td><td>0,48</td><td><span class='pill ok'>OK</span></td></tr><tr><td>willianspere</td><td>99,8%</td><td>0,00</td><td>0,50</td><td><span class='pill ok'>OK</span></td></tr><tr><td>fromanini</td><td>99,9%</td><td>0,01</td><td>0,01</td><td><span class='pill ok'>OK</span></td></tr><tr><td>ricfilho</td><td>100,0%</td><td>0,00</td><td>0,45</td><td><span class='pill ok'>OK</span></td></tr><tr><td>alqsouza</td><td>100,1%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>uanbarros</td><td>100,1%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>rogalves</td><td>100,2%</td><td>0,00</td><td>0,38</td><td><span class='pill ok'>OK</span></td></tr><tr><td>lucianamsilv</td><td>100,2%</td><td>0,00</td><td>0,18</td><td><span class='pill ok'>OK</span></td></tr><tr><td>sicarneiro</td><td>100,2%</td><td>0,00</td><td>0,22</td><td><span class='pill ok'>OK</span></td></tr><tr><td>eduardogsilv</td><td>100,2%</td><td>0,00</td><td>0,18</td><td><span class='pill ok'>OK</span></td></tr><tr><td>ronaldolima</td><td>100,4%</td><td>0,00</td><td>0,00</td><td><span class='pill ok'>OK</span></td></tr><tr><td>cafaraujo</td><td>100,6%</td><td>0,00</td><td>0,10</td><td><span class='pill warn'>Conferir (acima de 100%)</span></td></tr><tr><td>larissasmart</td><td>100,7%</td><td>0,00</td><td>0,00</td><td><span class='pill warn'>Conferir (acima de 100%)</span></td></tr><tr><td>adnilsonmbar</td><td>101,7%</td><td>0,01</td><td>0,08</td><td><span class='pill warn'>Conferir (acima de 100%)</span></td></tr><tr><td>wemoreira</td><td>112,8%</td><td>0,00</td><td>2,55</td><td><span class='pill warn'>Conferir (acima de 100%)</span></td></tr></tbody></table>
+   <p class="note">Abaixo de 95%: luipires, evdemelo, danieloli, dimoreira, rcosoliveira.</p>
+  </div>
+ </div>
+</div>
+<div class="errs"><h2 style="font-size:1.1em;margin:0 0 6px">Taxa de erro por operador <small style="font-weight:400;color:#7a829c">CAD BRSP10 · meta 0,17%</small></h2>
+<p class="sub" style="text-align:center;font-style:italic">sem dado · a fonte de erros CAD BRSP10 não está disponível nesta sessão</p></div>
+</div>
+</body></html>
