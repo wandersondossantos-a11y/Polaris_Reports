@@ -3,14 +3,14 @@
 {
   "name": "Polaris Produtividade Time",
   "schemaVersion": 1,
-  "description": "Dashboard diário do time (wdossantos): produtividade por processo, hora a hora e AT de 21/10/2026 (D-1). Taxa de erro BRSP10 de 20/10 (último dia disponível no dashboard de erros; 21/10 ainda não publicado)."
+  "description": "Dashboard do turno (23:05 às 07:50) do time wdossantos. Turno do dia 21/10 (21/10 23h + 22/10 00h–07h). AT e taxa de erro são de dia inteiro (fonte não filtra por hora); taxa de erro BRSP10 de 20/10."
 }
 </script>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Polaris - Produtividade do time (D-1 · 21/10/2026)</title>
+<title>Polaris - Produtividade do turno (21/10 23:05 · 22/10 07:50)</title>
 <style>
 :root{--navy:#2D3277;--yellow:#FFE600;--ink:#1c2233;--mute:#667085;--line:#e6e9f0;--bg:#f4f6fb;--card:#fff;--good:#12805c;--goodbg:#e6f6ef;--bad:#c23b3b;--badbg:#fdecec;--warn:#a86400;--warnbg:#fff5dd}
 *{box-sizing:border-box}
@@ -49,65 +49,64 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 </head>
 <body>
 <header>
-  <span class="tag">D-1 · 21/10/2026</span>
-  <h1>Produtividade do time</h1>
-  <p>LDAP wdossantos · produtividade por processo e hora a hora (21/10) · AT (21/10) · taxa de erro BRSP10 (20/10)</p>
+  <span class="tag">Turno 21/10 23:05 → 22/10 07:50</span>
+  <h1>Produtividade do turno</h1>
+  <p>LDAP wdossantos · produtividade por processo e hora a hora dentro do turno · AT e taxa de erro de dia inteiro</p>
 </header>
 
 <main>
   <section class="card span-12">
     <div class="kpis">
-      <div class="kpi"><div class="v">98,3%</div><div class="l">AT médio da equipe (21/10)</div><div class="s"><span class="pill good">Meta 95%</span></div></div>
-      <div class="kpi"><div class="v">5 de 24</div><div class="l">Reps abaixo da meta de AT 95%</div><div class="s"><span class="pill bad">Atenção</span></div></div>
-      <div class="kpi"><div class="v">0,16%</div><div class="l">Taxa de erro do time BRSP10 (20/10, 3 de 1.928)</div><div class="s"><span class="pill warn">Meta 0,17% · 21/10 indisponível</span></div></div>
-      <div class="kpi"><div class="v">open_transfer</div><div class="l">Pior neta vs meta (9,0 contra 38,9 u/h, 23%)</div><div class="s"><span class="pill bad">Muito abaixo</span></div></div>
+      <div class="kpi"><div class="v">54,6%</div><div class="l">Efetividade do turno (95,4 h efetivas de 174,8 h de processo)</div><div class="s"><span class="pill warn">Sem meta definida</span></div></div>
+      <div class="kpi"><div class="v">10.357</div><div class="l">Unidades processadas no turno</div><div class="s"><span class="pill good">Turno completo</span></div></div>
+      <div class="kpi"><div class="v">98,3%</div><div class="l">AT médio da equipe (21/10, dia inteiro)</div><div class="s"><span class="pill good">Meta 95%</span></div></div>
+      <div class="kpi"><div class="v">44,9 u/h</div><div class="l">open_transfer no turno (meta 80,7 u/h efetivas)</div><div class="s"><span class="pill bad">Muito abaixo</span></div></div>
     </div>
   </section>
 
   <section class="card span-6">
-    <h2>Produtividade por processo <small>média da equipe, u/h · 21/10</small></h2>
+    <h2>Produtividade por processo <small>turno 21/10 23:05 → 22/10 07:50 · efetiva</small></h2>
     <div class="scroll">
     <table>
-      <thead><tr><th>Processo</th><th class="num">Efetiva</th><th class="num">Neta</th><th class="num">Meta efetiva</th><th class="num">Meta neta</th><th>Situação</th></tr></thead>
+      <thead><tr><th>Processo</th><th class="num">Unidades</th><th class="num">Efetiva (u/h)</th><th class="num">Meta efetiva</th><th class="num">% da meta</th><th>Situação</th></tr></thead>
       <tbody>
-        <tr><td>corrective_count</td><td class="num">21,2</td><td class="num">18,4</td><td class="num">28,0</td><td class="num">24,9</td><td><span class="pill bad">Abaixo</span></td></tr>
-        <tr><td>cycle_count</td><td class="num">111,0</td><td class="num">84,6</td><td class="num">188,0</td><td class="num">125,5</td><td><span class="pill bad">Abaixo</span></td></tr>
-        <tr><td>inbound_audit</td><td class="num">84,4</td><td class="num">63,8</td><td class="num">153,9</td><td class="num">112,9</td><td><span class="pill bad">Abaixo</span></td></tr>
-        <tr><td>movable_audit</td><td class="num">226,1</td><td class="num">130,7</td><td class="num">306,2</td><td class="num">168,2</td><td><span class="pill bad">Abaixo</span></td></tr>
-        <tr><td>open_transfer</td><td class="num">33,3</td><td class="num">9,0</td><td class="num">80,7</td><td class="num">38,9</td><td><span class="pill bad">Muito abaixo</span></td></tr>
-        <tr><td>stock_audit</td><td class="num">52,8</td><td class="num">39,6</td><td class="num">62,6</td><td class="num">52,3</td><td><span class="pill good">Acima (neta)</span></td></tr>
+        <tr><td>corrective_count</td><td class="num">368</td><td class="num">21,4</td><td class="num">28,0</td><td class="num">76%</td><td><span class="pill bad">Abaixo</span></td></tr>
+        <tr><td>cycle_count</td><td class="num">4.154</td><td class="num">132,0</td><td class="num">188,0</td><td class="num">70%</td><td><span class="pill bad">Abaixo</span></td></tr>
+        <tr><td>inbound_audit</td><td class="num">2.146</td><td class="num">133,7</td><td class="num">153,9</td><td class="num">87%</td><td><span class="pill bad">Abaixo</span></td></tr>
+        <tr><td>movable_audit</td><td class="num">2.041</td><td class="num">326,8</td><td class="num">306,2</td><td class="num">107%</td><td><span class="pill good">Acima</span></td></tr>
+        <tr><td>open_transfer</td><td class="num">375</td><td class="num">44,9</td><td class="num">80,7</td><td class="num">56%</td><td><span class="pill bad">Muito abaixo</span></td></tr>
+        <tr><td>stock_audit</td><td class="num">1.273</td><td class="num">79,0</td><td class="num">62,6</td><td class="num">126%</td><td><span class="pill good">Acima</span></td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note">Visão macro (get_productivity, 21/10). Não somar produtividade entre processos.</p>
+    <p class="note">Somado a partir do detalhe hora a hora do turno. Não somar produtividade entre processos.</p>
   </section>
 
   <section class="card span-6">
-    <h2>Hora a hora <small>todos os processos, horas-operador · 21/10</small></h2>
+    <h2>Hora a hora <small>todos os processos, horas-operador · turno</small></h2>
     <div class="scroll">
     <table>
       <thead><tr><th>Hora</th><th class="num">Unidades</th><th class="num">Processo (h)</th><th class="num">Efetivo (h)</th><th>% efetivo</th></tr></thead>
       <tbody>
-        <tr><td>00h</td><td class="num">1.276</td><td class="num">19,52</td><td class="num">13,33</td><td><div class="bar"><span style="width:68%"></span></div></td></tr>
-        <tr><td>01h</td><td class="num">1.325</td><td class="num">21,75</td><td class="num">13,92</td><td><div class="bar"><span style="width:64%"></span></div></td></tr>
-        <tr><td>02h</td><td class="num">633</td><td class="num">18,82</td><td class="num">7,56</td><td><div class="bar"><span style="width:40%"></span></div></td></tr>
-        <tr><td>03h</td><td class="num">51</td><td class="num">3,71</td><td class="num">1,46</td><td><div class="bar"><span style="width:39%"></span></div></td></tr>
-        <tr><td>04h</td><td class="num">456</td><td class="num">18,90</td><td class="num">6,57</td><td><div class="bar"><span style="width:35%"></span></div></td></tr>
-        <tr><td>05h</td><td class="num">890</td><td class="num">22,00</td><td class="num">11,64</td><td><div class="bar"><span style="width:53%"></span></div></td></tr>
-        <tr><td>06h</td><td class="num">892</td><td class="num">21,62</td><td class="num">12,63</td><td><div class="bar"><span style="width:58%"></span></div></td></tr>
-        <tr><td>07h</td><td class="num">461</td><td class="num">18,84</td><td class="num">8,38</td><td><div class="bar"><span style="width:44%"></span></div></td></tr>
-        <tr><td>08h</td><td class="num">0</td><td class="num">0,33</td><td class="num">0,00</td><td><div class="bar"><span style="width:0%"></span></div></td></tr>
-        <tr><td>22h</td><td class="num">0</td><td class="num">1,58</td><td class="num">1,23</td><td><div class="bar"><span style="width:78%"></span></div></td></tr>
-        <tr><td>23h</td><td class="num">302</td><td class="num">15,72</td><td class="num">5,14</td><td><div class="bar"><span style="width:33%"></span></div></td></tr>
-        <tr style="background:#f4f6fb"><td><strong>Total</strong></td><td class="num"><strong>6.286</strong></td><td class="num"><strong>162,77</strong></td><td class="num"><strong>81,85</strong></td><td><strong>50%</strong></td></tr>
+        <tr><td>21/10 23h</td><td class="num">302</td><td class="num">15,72</td><td class="num">5,14</td><td><div class="bar"><span style="width:33%"></span></div></td></tr>
+        <tr><td>22/10 00h</td><td class="num">1.408</td><td class="num">22,62</td><td class="num">13,83</td><td><div class="bar"><span style="width:61%"></span></div></td></tr>
+        <tr><td>01h</td><td class="num">1.694</td><td class="num">22,97</td><td class="num">13,76</td><td><div class="bar"><span style="width:60%"></span></div></td></tr>
+        <tr><td>02h</td><td class="num">1.099</td><td class="num">19,46</td><td class="num">8,73</td><td><div class="bar"><span style="width:45%"></span></div></td></tr>
+        <tr><td>03h</td><td class="num">48</td><td class="num">4,23</td><td class="num">2,20</td><td><div class="bar"><span style="width:52%"></span></div></td></tr>
+        <tr><td>04h</td><td class="num">1.541</td><td class="num">22,99</td><td class="num">13,47</td><td><div class="bar"><span style="width:59%"></span></div></td></tr>
+        <tr><td>05h</td><td class="num">1.782</td><td class="num">23,00</td><td class="num">13,91</td><td><div class="bar"><span style="width:60%"></span></div></td></tr>
+        <tr><td>06h</td><td class="num">1.489</td><td class="num">23,00</td><td class="num">14,93</td><td><div class="bar"><span style="width:65%"></span></div></td></tr>
+        <tr><td>07h</td><td class="num">994</td><td class="num">20,83</td><td class="num">9,44</td><td><div class="bar"><span style="width:45%"></span></div></td></tr>
+        <tr style="background:#f4f6fb"><td><strong>Total do turno</strong></td><td class="num"><strong>10.357</strong></td><td class="num"><strong>174,83</strong></td><td class="num"><strong>95,41</strong></td><td><strong>55%</strong></td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note">09h a 21h sem atividade. Pior hora: 23h (33%), por causa do open_transfer (8,88 h de processo, 1,44 h efetivas).</p>
+    <p class="note">Pior hora: 21/10 23h (33%), por causa do open_transfer. A faixa 23h inclui 23:00–23:04 e a faixa 07h inclui 07:50–07:59, pois a ferramenta agrupa por hora cheia.</p>
   </section>
 
   <section class="card span-12">
-    <h2>AT por operador <small>meta 95% · 21/10 · pior AT primeiro</small></h2>
+    <h2>AT por operador <small>meta 95% · dia 21/10 inteiro (a ferramenta de AT não filtra por turno)</small></h2>
+    <div class="alert">AT é calculado por dia. Os valores abaixo são do dia 21/10 inteiro, não do turno.</div>
     <div class="scroll">
     <table>
       <thead><tr><th>Operador</th><th class="num">AT</th><th class="num">TND (h)</th><th class="num">EIT (h)</th><th>Situação</th></tr></thead>
@@ -139,12 +138,12 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
       </tbody>
     </table>
     </div>
-    <p class="note">Média da equipe: 98,3%. Cinco reps abaixo de 95%: luipires, evdemelo, danieloli, dimoreira e rcosoliveira.</p>
+    <p class="note">Média da equipe (dia 21/10): 98,3%. Cinco reps abaixo de 95%: luipires, evdemelo, danieloli, dimoreira e rcosoliveira.</p>
   </section>
 
   <section class="card span-12">
     <h2>Taxa de erro por operador <small>CAD BRSP10 · 20/10 (último dia disponível) · erros ÷ unidades · meta 0,17%</small></h2>
-    <div class="alert">O dashboard Erros Operacionais - MLB foi gerado em 21/10 às 10:00 e não tem dados de 21/10. A tabela mostra 20/10.</div>
+    <div class="alert">A taxa de erro é publicada por dia e não por hora, então não dá para filtrar pelo turno. O dashboard Erros Operacionais - MLB não tem 21/10 ainda; a tabela mostra 20/10.</div>
     <div class="scroll">
     <table>
       <thead><tr><th>Operador</th><th class="num">Erros</th><th class="num">Unidades processadas</th><th class="num">Taxa</th><th>Situação</th></tr></thead>
@@ -156,27 +155,6 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
       </tbody>
     </table>
     </div>
-    <p class="note">Somente operadores do time com unidades processadas em 20/10 aparecem nesta tabela.</p>
-  </section>
-
-  <section class="card span-12">
-    <h2>Operadores com produtividade zero ou crítica <small>21/10 · processo</small></h2>
-    <div class="scroll">
-    <table>
-      <thead><tr><th>Operador</th><th>Processo</th><th class="num">Efetiva (u/h)</th><th class="num">Neta vs meta</th><th class="num">Utilização</th><th class="num">Ociosidade</th></tr></thead>
-      <tbody>
-        <tr><td>wemoreira</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
-        <tr><td>uanbarros</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">0%</td><td class="num">100%</td></tr>
-        <tr><td>rcosoliveira</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">0%</td><td class="num">100%</td></tr>
-        <tr><td>eduardogsilv</td><td>stock_audit</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
-        <tr><td>wemoreira</td><td>open_transfer</td><td class="num">4,7</td><td class="num"><span class="pill bad">2,5%</span></td><td class="num">30%</td><td class="num">70%</td></tr>
-        <tr><td>carlosedalme</td><td>open_transfer</td><td class="num">11,0</td><td class="num"><span class="pill bad">4,2%</span></td><td class="num">22%</td><td class="num">79%</td></tr>
-        <tr><td>matrgomes</td><td>open_transfer</td><td class="num">19,3</td><td class="num"><span class="pill bad">4,3%</span></td><td class="num">35%</td><td class="num">65%</td></tr>
-        <tr><td>eduardogsilv</td><td>open_transfer</td><td class="num">11,5</td><td class="num"><span class="pill bad">5,0%</span></td><td class="num">22%</td><td class="num">78%</td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p class="note">Lista parcial dos casos de atenção. A tarefa diária substitui o conteúdo pelo D-1 mais recente.</p>
   </section>
 </main>
 </body>
