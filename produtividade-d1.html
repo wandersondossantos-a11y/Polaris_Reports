@@ -1,9 +1,16 @@
 <!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Polaris Produtividade Time",
+  "schemaVersion": 1,
+  "description": "Dashboard diário do time (wdossantos): produtividade por processo, hora a hora e AT de 21/10/2026 (D-1). Taxa de erro BRSP10 de 20/10 (último dia disponível no dashboard de erros; 21/10 ainda não publicado)."
+}
+</script>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Polaris - Produtividade do time (D-1 · 20/10/2026)</title>
+<title>Polaris - Produtividade do time (D-1 · 21/10/2026)</title>
 <style>
 :root{--navy:#2D3277;--yellow:#FFE600;--ink:#1c2233;--mute:#667085;--line:#e6e9f0;--bg:#f4f6fb;--card:#fff;--good:#12805c;--goodbg:#e6f6ef;--bad:#c23b3b;--badbg:#fdecec;--warn:#a86400;--warnbg:#fff5dd}
 *{box-sizing:border-box}
@@ -33,113 +40,111 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .pill.good{background:var(--goodbg);color:var(--good)}
 .pill.bad{background:var(--badbg);color:var(--bad)}
 .pill.warn{background:var(--warnbg);color:var(--warn)}
-.pill.neutral{background:#eef0f7;color:var(--mute)}
 .bar{height:8px;background:#eef0f7;border-radius:999px;overflow:hidden;min-width:110px}
 .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--navy),#6d74d6);border-radius:999px}
 .note{color:var(--mute);font-size:12px;margin:12px 0 0;line-height:1.5}
+.alert{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:10px 12px;font-size:13px;margin:0 0 14px}
 .scroll{overflow-x:auto}
 </style>
 </head>
 <body>
 <header>
-  <span class="tag">D-1 · 20/10/2026</span>
+  <span class="tag">D-1 · 21/10/2026</span>
   <h1>Produtividade do time</h1>
-  <p>LDAP wdossantos · 24 reps · produtividade por processo, hora a hora, AT e taxa de erro</p>
+  <p>LDAP wdossantos · produtividade por processo e hora a hora (21/10) · AT (21/10) · taxa de erro BRSP10 (20/10)</p>
 </header>
 
 <main>
   <section class="card span-12">
     <div class="kpis">
-      <div class="kpi"><div class="v">99,1%</div><div class="l">AT médio da equipe</div><div class="s"><span class="pill good">Meta 95%</span></div></div>
-      <div class="kpi"><div class="v">3</div><div class="l">Reps abaixo da meta de AT</div><div class="s"><span class="pill bad">Atenção</span></div></div>
-      <div class="kpi"><div class="v">0,16%</div><div class="l">Taxa de erro do time (3 de 1.928)</div><div class="s"><span class="pill warn">Meta 0,17%</span></div></div>
-      <div class="kpi"><div class="v">open_transfer</div><div class="l">Pior neta vs meta (5,4 contra 37,7 u/h)</div><div class="s"><span class="pill bad">Muito abaixo</span></div></div>
+      <div class="kpi"><div class="v">98,3%</div><div class="l">AT médio da equipe (21/10)</div><div class="s"><span class="pill good">Meta 95%</span></div></div>
+      <div class="kpi"><div class="v">5 de 24</div><div class="l">Reps abaixo da meta de AT 95%</div><div class="s"><span class="pill bad">Atenção</span></div></div>
+      <div class="kpi"><div class="v">0,16%</div><div class="l">Taxa de erro do time BRSP10 (20/10, 3 de 1.928)</div><div class="s"><span class="pill warn">Meta 0,17% · 21/10 indisponível</span></div></div>
+      <div class="kpi"><div class="v">open_transfer</div><div class="l">Pior neta vs meta (9,0 contra 38,9 u/h, 23%)</div><div class="s"><span class="pill bad">Muito abaixo</span></div></div>
     </div>
   </section>
 
   <section class="card span-6">
-    <h2>Produtividade por processo <small>média da equipe, u/h</small></h2>
+    <h2>Produtividade por processo <small>média da equipe, u/h · 21/10</small></h2>
     <div class="scroll">
     <table>
       <thead><tr><th>Processo</th><th class="num">Efetiva</th><th class="num">Neta</th><th class="num">Meta efetiva</th><th class="num">Meta neta</th><th>Situação</th></tr></thead>
       <tbody>
-        <tr><td>checkin</td><td class="num">175,4</td><td class="num">153,1</td><td class="num">193,5</td><td class="num">104,8</td><td><span class="pill good">Neta acima</span></td></tr>
-        <tr><td>corrective_count</td><td class="num">38,1</td><td class="num">33,8</td><td class="num">28,0</td><td class="num">24,6</td><td><span class="pill good">Acima</span></td></tr>
-        <tr><td>cubing_and_product_data</td><td class="num">23,2</td><td class="num">12,5</td><td class="num">25,6</td><td class="num">18,5</td><td><span class="pill bad">Abaixo</span></td></tr>
-        <tr><td>cycle_count</td><td class="num">143,4</td><td class="num">102,4</td><td class="num">188,0</td><td class="num">124,4</td><td><span class="pill bad">Abaixo</span></td></tr>
-        <tr><td>inbound_audit</td><td class="num">119,3</td><td class="num">95,2</td><td class="num">153,9</td><td class="num">113,3</td><td><span class="pill bad">Abaixo</span></td></tr>
-        <tr><td>movable_audit</td><td class="num">371,3</td><td class="num">345,2</td><td class="num">306,2</td><td class="num">167,3</td><td><span class="pill good">Acima</span></td></tr>
-        <tr><td>open_transfer</td><td class="num">22,0</td><td class="num">5,4</td><td class="num">80,7</td><td class="num">37,7</td><td><span class="pill bad">Muito abaixo</span></td></tr>
-        <tr><td>putaway</td><td class="num">681,8</td><td class="num">77,5</td><td class="num">190,9</td><td class="num">62,1</td><td><span class="pill warn">Efetiva distorcida</span></td></tr>
-        <tr><td>quarentine</td><td class="num">19,9</td><td class="num">16,6</td><td class="num">38,4</td><td class="num">23,7</td><td><span class="pill bad">Abaixo</span></td></tr>
-        <tr><td>stock_audit</td><td class="num">71,1</td><td class="num">59,5</td><td class="num">62,6</td><td class="num">52,6</td><td><span class="pill good">Acima (neta)</span></td></tr>
+        <tr><td>corrective_count</td><td class="num">21,2</td><td class="num">18,4</td><td class="num">28,0</td><td class="num">24,9</td><td><span class="pill bad">Abaixo</span></td></tr>
+        <tr><td>cycle_count</td><td class="num">111,0</td><td class="num">84,6</td><td class="num">188,0</td><td class="num">125,5</td><td><span class="pill bad">Abaixo</span></td></tr>
+        <tr><td>inbound_audit</td><td class="num">84,4</td><td class="num">63,8</td><td class="num">153,9</td><td class="num">112,9</td><td><span class="pill bad">Abaixo</span></td></tr>
+        <tr><td>movable_audit</td><td class="num">226,1</td><td class="num">130,7</td><td class="num">306,2</td><td class="num">168,2</td><td><span class="pill bad">Abaixo</span></td></tr>
+        <tr><td>open_transfer</td><td class="num">33,3</td><td class="num">9,0</td><td class="num">80,7</td><td class="num">38,9</td><td><span class="pill bad">Muito abaixo</span></td></tr>
+        <tr><td>stock_audit</td><td class="num">52,8</td><td class="num">39,6</td><td class="num">62,6</td><td class="num">52,3</td><td><span class="pill good">Acima (neta)</span></td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note">Não some produtividade entre processos. Putaway tem pouco tempo efetivo (0,04 h), por isso a efetiva fica distorcida.</p>
+    <p class="note">Visão macro (get_productivity, 21/10). Não somar produtividade entre processos.</p>
   </section>
 
   <section class="card span-6">
-    <h2>Hora a hora <small>todos os processos, horas-operador</small></h2>
+    <h2>Hora a hora <small>todos os processos, horas-operador · 21/10</small></h2>
     <div class="scroll">
     <table>
       <thead><tr><th>Hora</th><th class="num">Unidades</th><th class="num">Processo (h)</th><th class="num">Efetivo (h)</th><th>% efetivo</th></tr></thead>
       <tbody>
-        <tr><td>00h</td><td class="num">739</td><td class="num">12,46</td><td class="num">8,58</td><td><div class="bar"><span style="width:69%"></span></div></td></tr>
-        <tr><td>01h</td><td class="num">991</td><td class="num">13,44</td><td class="num">8,57</td><td><div class="bar"><span style="width:64%"></span></div></td></tr>
-        <tr><td>02h</td><td class="num">1.035</td><td class="num">12,89</td><td class="num">6,80</td><td><div class="bar"><span style="width:53%"></span></div></td></tr>
-        <tr><td>03h</td><td class="num">1</td><td class="num">1,46</td><td class="num">0,70</td><td><div class="bar"><span style="width:48%"></span></div></td></tr>
-        <tr><td>04h</td><td class="num">1.080</td><td class="num">14,55</td><td class="num">9,45</td><td><div class="bar"><span style="width:65%"></span></div></td></tr>
-        <tr><td>05h</td><td class="num">1.151</td><td class="num">14,00</td><td class="num">9,80</td><td><div class="bar"><span style="width:70%"></span></div></td></tr>
-        <tr><td>06h</td><td class="num">586</td><td class="num">13,96</td><td class="num">7,85</td><td><div class="bar"><span style="width:56%"></span></div></td></tr>
-        <tr><td>07h</td><td class="num">586</td><td class="num">12,27</td><td class="num">5,38</td><td><div class="bar"><span style="width:44%"></span></div></td></tr>
-        <tr><td>08h</td><td class="num">0</td><td class="num">0,24</td><td class="num">0,00</td><td><div class="bar"><span style="width:0%"></span></div></td></tr>
-        <tr><td>22h</td><td class="num">2</td><td class="num">2,42</td><td class="num">1,77</td><td><div class="bar"><span style="width:73%"></span></div></td></tr>
-        <tr><td>23h</td><td class="num">56</td><td class="num">13,86</td><td class="num">3,01</td><td><div class="bar"><span style="width:22%"></span></div></td></tr>
+        <tr><td>00h</td><td class="num">1.276</td><td class="num">19,52</td><td class="num">13,33</td><td><div class="bar"><span style="width:68%"></span></div></td></tr>
+        <tr><td>01h</td><td class="num">1.325</td><td class="num">21,75</td><td class="num">13,92</td><td><div class="bar"><span style="width:64%"></span></div></td></tr>
+        <tr><td>02h</td><td class="num">633</td><td class="num">18,82</td><td class="num">7,56</td><td><div class="bar"><span style="width:40%"></span></div></td></tr>
+        <tr><td>03h</td><td class="num">51</td><td class="num">3,71</td><td class="num">1,46</td><td><div class="bar"><span style="width:39%"></span></div></td></tr>
+        <tr><td>04h</td><td class="num">456</td><td class="num">18,90</td><td class="num">6,57</td><td><div class="bar"><span style="width:35%"></span></div></td></tr>
+        <tr><td>05h</td><td class="num">890</td><td class="num">22,00</td><td class="num">11,64</td><td><div class="bar"><span style="width:53%"></span></div></td></tr>
+        <tr><td>06h</td><td class="num">892</td><td class="num">21,62</td><td class="num">12,63</td><td><div class="bar"><span style="width:58%"></span></div></td></tr>
+        <tr><td>07h</td><td class="num">461</td><td class="num">18,84</td><td class="num">8,38</td><td><div class="bar"><span style="width:44%"></span></div></td></tr>
+        <tr><td>08h</td><td class="num">0</td><td class="num">0,33</td><td class="num">0,00</td><td><div class="bar"><span style="width:0%"></span></div></td></tr>
+        <tr><td>22h</td><td class="num">0</td><td class="num">1,58</td><td class="num">1,23</td><td><div class="bar"><span style="width:78%"></span></div></td></tr>
+        <tr><td>23h</td><td class="num">302</td><td class="num">15,72</td><td class="num">5,14</td><td><div class="bar"><span style="width:33%"></span></div></td></tr>
+        <tr style="background:#f4f6fb"><td><strong>Total</strong></td><td class="num"><strong>6.286</strong></td><td class="num"><strong>162,77</strong></td><td class="num"><strong>81,85</strong></td><td><strong>50%</strong></td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note">09h a 21h sem atividade. Pior hora: 23h, por causa do open_transfer (9,6 h de processo, 4,3 h de EIT).</p>
+    <p class="note">09h a 21h sem atividade. Pior hora: 23h (33%), por causa do open_transfer (8,88 h de processo, 1,44 h efetivas).</p>
   </section>
 
   <section class="card span-12">
-    <h2>AT por operador <small>meta 95%</small></h2>
+    <h2>AT por operador <small>meta 95% · 21/10 · pior AT primeiro</small></h2>
     <div class="scroll">
     <table>
       <thead><tr><th>Operador</th><th class="num">AT</th><th class="num">TND (h)</th><th class="num">EIT (h)</th><th>Situação</th></tr></thead>
       <tbody>
-        <tr><td>luipires</td><td class="num">84,3%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr><td>evdemelo</td><td class="num">87,0%</td><td class="num">0,01</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr><td>dimoreira</td><td class="num">89,5%</td><td class="num">0,01</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr><td>willianspere</td><td class="num">97,2%</td><td class="num">0,02</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>rirbbatista</td><td class="num">99,0%</td><td class="num">0,00</td><td class="num">1,47</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>lucianamsilv</td><td class="num">99,4%</td><td class="num">0,00</td><td class="num">0,18</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>matrgomes</td><td class="num">100,0%</td><td class="num">0,00</td><td class="num">1,23</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>uanbarros</td><td class="num">99,9%</td><td class="num">0,00</td><td class="num">1,43</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>sicarneiro</td><td class="num">99,9%</td><td class="num">0,00</td><td class="num">0,02</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>fromanini</td><td class="num">99,7%</td><td class="num">0,00</td><td class="num">0,73</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>rcosoliveira</td><td class="num">100,0%</td><td class="num">0,01</td><td class="num">0,17</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>cafaraujo</td><td class="num">100,2%</td><td class="num">0,00</td><td class="num">0,10</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>rogalves</td><td class="num">100,4%</td><td class="num">0,01</td><td class="num">0,18</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>alqsouza</td><td class="num">100,3%</td><td class="num">0,00</td><td class="num">1,00</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>ricfilho</td><td class="num">100,1%</td><td class="num">0,00</td><td class="num">0,96</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>danieloli</td><td class="num">100,1%</td><td class="num">0,01</td><td class="num">0,94</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>ronaldolima</td><td class="num">100,8%</td><td class="num">0,02</td><td class="num">0,51</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>eduardogsilv</td><td class="num">100,8%</td><td class="num">0,00</td><td class="num">0,58</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>adnilsonmbar</td><td class="num">101,0%</td><td class="num">0,00</td><td class="num">0,47</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>leanddasilva</td><td class="num">101,0%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>carlosedalme</td><td class="num">101,2%</td><td class="num">0,00</td><td class="num">0,76</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>jjttakahashi</td><td class="num">101,3%</td><td class="num">0,65</td><td class="num">0,32</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>larissasmart</td><td class="num">101,8%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>wemoreira</td><td class="num">112,8%</td><td class="num">0,01</td><td class="num">1,76</td><td><span class="pill warn">Conferir (acima de 100%)</span></td></tr>
+        <tr><td>luipires</td><td class="num">87,2%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
+        <tr><td>evdemelo</td><td class="num">88,2%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
+        <tr><td>danieloli</td><td class="num">88,5%</td><td class="num">0,00</td><td class="num">1,08</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
+        <tr><td>dimoreira</td><td class="num">90,1%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
+        <tr><td>rcosoliveira</td><td class="num">93,6%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
+        <tr><td>matrgomes</td><td class="num">98,5%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>rirbbatista</td><td class="num">99,0%</td><td class="num">0,00</td><td class="num">0,80</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>wglaurang</td><td class="num">99,4%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>leanddasilva</td><td class="num">99,6%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>carlosedalme</td><td class="num">99,6%</td><td class="num">0,00</td><td class="num">0,48</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>willianspere</td><td class="num">99,8%</td><td class="num">0,00</td><td class="num">0,50</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>fromanini</td><td class="num">99,9%</td><td class="num">0,01</td><td class="num">0,01</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>ricfilho</td><td class="num">100,0%</td><td class="num">0,00</td><td class="num">0,45</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>alqsouza</td><td class="num">100,1%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>uanbarros</td><td class="num">100,1%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>rogalves</td><td class="num">100,2%</td><td class="num">0,00</td><td class="num">0,38</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>lucianamsilv</td><td class="num">100,2%</td><td class="num">0,00</td><td class="num">0,18</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>sicarneiro</td><td class="num">100,2%</td><td class="num">0,00</td><td class="num">0,22</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>eduardogsilv</td><td class="num">100,2%</td><td class="num">0,00</td><td class="num">0,18</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>ronaldolima</td><td class="num">100,4%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>cafaraujo</td><td class="num">100,6%</td><td class="num">0,00</td><td class="num">0,10</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>larissasmart</td><td class="num">100,7%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>adnilsonmbar</td><td class="num">101,7%</td><td class="num">0,01</td><td class="num">0,08</td><td><span class="pill good">OK</span></td></tr>
+        <tr><td>wemoreira</td><td class="num">112,8%</td><td class="num">0,00</td><td class="num">2,55</td><td><span class="pill warn">Conferir (acima de 100%)</span></td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note">Média da equipe: 99,1%.</p>
+    <p class="note">Média da equipe: 98,3%. Cinco reps abaixo de 95%: luipires, evdemelo, danieloli, dimoreira e rcosoliveira.</p>
   </section>
 
   <section class="card span-12">
-    <h2>Taxa de erro D-1 por operador <small>CAD BRSP10 · 20/10 · erros ÷ unidades processadas · meta 0,17%</small></h2>
+    <h2>Taxa de erro por operador <small>CAD BRSP10 · 20/10 (último dia disponível) · erros ÷ unidades · meta 0,17%</small></h2>
+    <div class="alert">O dashboard Erros Operacionais - MLB foi gerado em 21/10 às 10:00 e não tem dados de 21/10. A tabela mostra 20/10.</div>
     <div class="scroll">
     <table>
       <thead><tr><th>Operador</th><th class="num">Erros</th><th class="num">Unidades processadas</th><th class="num">Taxa</th><th>Situação</th></tr></thead>
@@ -151,29 +156,23 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
       </tbody>
     </table>
     </div>
-    <p class="note">Total do CAD BRSP10 no dia: 77 erros em 13.078 unidades (0,59%). Os demais operadores do CAD sem Cycle Count em 20/10 não entram na taxa do time.</p>
+    <p class="note">Somente operadores do time com unidades processadas em 20/10 aparecem nesta tabela.</p>
   </section>
 
   <section class="card span-12">
-    <h2>Operadores com produtividade zero ou crítica <small>processo</small></h2>
+    <h2>Operadores com produtividade zero ou crítica <small>21/10 · processo</small></h2>
     <div class="scroll">
     <table>
       <thead><tr><th>Operador</th><th>Processo</th><th class="num">Efetiva (u/h)</th><th class="num">Neta vs meta</th><th class="num">Utilização</th><th class="num">Ociosidade</th></tr></thead>
       <tbody>
-        <tr><td>willianspere</td><td>corrective_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
-        <tr><td>fromanini</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
-        <tr><td>eduardogsilv</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
+        <tr><td>wemoreira</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
         <tr><td>uanbarros</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">0%</td><td class="num">100%</td></tr>
-        <tr><td>sicarneiro</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">0%</td><td class="num">100%</td></tr>
-        <tr><td>ronaldolima</td><td>inbound_audit</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">37%</td><td class="num">63%</td></tr>
-        <tr><td>carlosedalme</td><td>inbound_audit</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">0%</td><td class="num">100%</td></tr>
-        <tr><td>wemoreira</td><td>stock_audit</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
-        <tr><td>sicarneiro</td><td>stock_audit</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
-        <tr><td>rirbbatista</td><td>open_transfer</td><td class="num">47,2</td><td class="num"><span class="pill warn">49%</span></td><td class="num">60%</td><td class="num">40%</td></tr>
-        <tr><td>matrgomes</td><td>open_transfer</td><td class="num">15,5</td><td class="num"><span class="pill bad">2,5%</span></td><td class="num">28%</td><td class="num">72%</td></tr>
-        <tr><td>eduardogsilv</td><td>open_transfer</td><td class="num">13,8</td><td class="num"><span class="pill bad">6%</span></td><td class="num">27%</td><td class="num">73%</td></tr>
-        <tr><td>cafaraujo</td><td>open_transfer</td><td class="num">12,5</td><td class="num"><span class="pill bad">9%</span></td><td class="num">29%</td><td class="num">71%</td></tr>
-        <tr><td>rcosoliveira</td><td>open_transfer</td><td class="num">12,5</td><td class="num"><span class="pill bad">6%</span></td><td class="num">24%</td><td class="num">76%</td></tr>
+        <tr><td>rcosoliveira</td><td>cycle_count</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">0%</td><td class="num">100%</td></tr>
+        <tr><td>eduardogsilv</td><td>stock_audit</td><td class="num">0,0</td><td class="num"><span class="pill bad">0%</span></td><td class="num">100%</td><td class="num">0%</td></tr>
+        <tr><td>wemoreira</td><td>open_transfer</td><td class="num">4,7</td><td class="num"><span class="pill bad">2,5%</span></td><td class="num">30%</td><td class="num">70%</td></tr>
+        <tr><td>carlosedalme</td><td>open_transfer</td><td class="num">11,0</td><td class="num"><span class="pill bad">4,2%</span></td><td class="num">22%</td><td class="num">79%</td></tr>
+        <tr><td>matrgomes</td><td>open_transfer</td><td class="num">19,3</td><td class="num"><span class="pill bad">4,3%</span></td><td class="num">35%</td><td class="num">65%</td></tr>
+        <tr><td>eduardogsilv</td><td>open_transfer</td><td class="num">11,5</td><td class="num"><span class="pill bad">5,0%</span></td><td class="num">22%</td><td class="num">78%</td></tr>
       </tbody>
     </table>
     </div>
