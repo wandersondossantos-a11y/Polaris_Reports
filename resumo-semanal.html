@@ -1,177 +1,231 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Polaris - Resumo semanal do time (11/10 a 17/10/2026)</title>
+<title>Resumo semanal do time: 19/10 a 23/10/2026</title>
 <style>
-:root{--navy:#2D3277;--yellow:#FFE600;--ink:#1c2233;--mute:#667085;--line:#e6e9f0;--bg:#f4f6fb;--card:#fff;--good:#12805c;--goodbg:#e6f6ef;--bad:#c23b3b;--badbg:#fdecec;--warn:#a86400;--warnbg:#fff5dd}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.45}
-header{background:linear-gradient(120deg,var(--navy) 0%,#3d44a0 60%,#5a62c4 100%);color:#fff;padding:28px 32px 84px}
-header .tag{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
-header h1{margin:12px 0 4px;font-size:26px;font-weight:700}
-header p{margin:0;opacity:.85;font-size:13px}
-main{max-width:1280px;margin:-64px auto 40px;padding:0 24px;display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
-.card{background:var(--card);border-radius:14px;padding:20px 22px;box-shadow:0 1px 2px rgba(16,24,40,.06),0 4px 16px rgba(16,24,40,.06);border:1px solid var(--line)}
-.span-12{grid-column:span 12}.span-6{grid-column:span 6}
-@media(max-width:900px){.span-6{grid-column:span 12}}
-h2{margin:0 0 14px;font-size:16px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-h2 small{font-weight:500;color:var(--mute);font-size:12px}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}}
-.kpi{background:linear-gradient(180deg,#fff,#f8f9fd);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
-.kpi .v{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
-.kpi .l{color:var(--mute);font-size:12px;margin-top:4px}
-.kpi .s{font-size:12px;margin-top:8px}
-table{width:100%;border-collapse:separate;border-spacing:0}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
-th{color:var(--mute);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;background:#fafbfd}
-tbody tr:hover{background:#fafbff}
-td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
-tr.abaixo td{background:#fff7f7}
-.pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:600}
-.pill.good{background:var(--goodbg);color:var(--good)}
-.pill.bad{background:var(--badbg);color:var(--bad)}
-.pill.warn{background:var(--warnbg);color:var(--warn)}
-.note{color:var(--mute);font-size:12px;margin:12px 0 0;line-height:1.5}
-.alert{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:10px 12px;font-size:13px;margin:0 0 14px}
-.scroll{overflow-x:auto}
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #f3f4f6; color: #1f2937; font-size: 14px; }
+header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 18px 28px; }
+header h1 { margin: 0 0 4px; font-size: 20px; }
+header p { margin: 0; color: #6b7280; font-size: 13px; }
+main { padding: 20px 28px 40px; max-width: 1280px; margin: 0 auto; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.kpi { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; }
+.kpi .label { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: .4px; }
+.kpi .value { font-size: 24px; font-weight: 600; margin: 4px 0 2px; }
+.kpi .hint { font-size: 12px; color: #6b7280; }
+
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; margin-bottom: 18px; overflow: hidden; }
+.card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 16px 20px 12px; flex-wrap: wrap; }
+.card-head h2 { margin: 0; font-size: 16px; font-weight: 600; }
+.card-head .sub { color: #6b7280; font-size: 13px; margin-top: 4px; max-width: 760px; }
+.actions { display: flex; gap: 8px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #2563eb; color: #2563eb; background: #fff; border-radius: 6px; padding: 7px 12px; font-size: 13px; cursor: pointer; font-family: inherit; }
+.btn:hover { background: #eff6ff; }
+.btn.icon { border-color: #d1d5db; color: #4b5563; padding: 7px 9px; }
+.btn.icon:hover { background: #f9fafb; }
+
+.table-wrap { overflow-x: auto; border-top: 1px solid #eef0f3; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; white-space: nowrap; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .4px; color: #6b7280; font-weight: 600; background: #fafafa; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tbody tr:hover { background: #f9fafb; }
+tr.below td { background: #fff5f5; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+.dot.ok { background: #16a34a; }
+.dot.bad { background: #dc2626; }
+.dot.warn { background: #f59e0b; }
+.ok { color: #15803d; }
+.bad { color: #b91c1c; }
+.warnc { color: #b45309; }
+.footer { padding: 10px 20px; color: #6b7280; font-size: 13px; border-top: 1px solid #eef0f3; }
+.warn-box { background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; border-radius: 6px; padding: 8px 12px; font-size: 13px; margin: 12px 20px 0; }
 </style>
 </head>
 <body>
 <header>
-  <span class="tag">Semana 11/10 a 17/10/2026</span>
-  <h1>Resumo semanal do time</h1>
-  <p>LDAP wdossantos · comparativo com 04/10 a 10/10/2026 · turnos 23:05 às 07:50 (atribuídos pela data de início)</p>
+  <h1>Resumo semanal do time: Fulfillment</h1>
+  <p>Período: 19/10/2026 a 23/10/2026 (seg a sex) · Líder: wdossantos</p>
 </header>
-
 <main>
-  <section class="card span-12">
-    <div class="alert">Os dados de produtividade e fast start/strong finish vêm das ferramentas Polaris por dia calendário; o recorte 23:05–07:50 ainda não foi aplicado. Ociosidade por operador, taxa de erro BRSP10 e comparativo com a semana anterior ainda não foram carregados.</div>
-    <div class="kpis">
-      <div class="kpi"><div class="v">88,9%</div><div class="l">AT médio da equipe (semana)</div><div class="s"><span class="pill bad">Meta 95% · 12 de 27 reps abaixo</span></div></div>
-      <div class="kpi"><div class="v">91,5%</div><div class="l">Fast start no prazo (65 de 71)</div><div class="s"><span class="pill good">Sem atrasos em 11/10 e 12/10</span></div></div>
-      <div class="kpi"><div class="v">42,7%</div><div class="l">Strong finish no prazo (32 de 75)</div><div class="s"><span class="pill bad">Abaixo da meta</span></div></div>
-      <div class="kpi"><div class="v">0,28%</div><div class="l">Taxa de erro BRSP10 do time (29 de 10.472)</div><div class="s"><span class="pill good">Meta 0,17% · semana anterior 1,40%</span></div></div>
-    </div>
-  </section>
 
-  <section class="card span-12">
-    <h2>Produtividade por processo <small>Efetiva (u/h), média da equipe por dia · "—" = sem dado no dia</small></h2>
-    <div class="scroll">
+<div class="kpis">
+  <div class="kpi"><div class="label">AT médio do time</div><div class="value ok">96%</div><div class="hint">Meta 95%. 5 operadores abaixo da meta.</div></div>
+  <div class="kpi"><div class="label">Fast start no prazo</div><div class="value ok">97,1%</div><div class="hint">67 de 69 · 2 atrasos</div></div>
+  <div class="kpi"><div class="label">Strong finish no prazo</div><div class="value bad">19,6%</div><div class="hint">10 de 51 · 41 atrasos</div></div>
+</div>
+
+<!-- Produtividade por processo -->
+<div class="card" data-export="produtividade">
+  <div class="card-head">
+    <div>
+      <h2>Produtividade por processo</h2>
+      <div class="sub">Período 19/10 a 23/10. Efetiva A = unidades ÷ effective_h. Efetiva B = neta sistêmica (o Polaris não traz um campo "Efetiva B"; confirme se é outro indicador). Neta = net_productivity. Utilização = effective_h ÷ process_h. Quarentena e putaway ficaram de fora por amostra pequena.</div>
+    </div>
+    <div class="actions">
+      <button class="btn" onclick="exportCSV('produtividade')">Exportar</button>
+    </div>
+  </div>
+  <div class="table-wrap">
     <table>
-      <thead><tr><th>Processo</th><th class="num">11/10</th><th class="num">12/10</th><th class="num">13/10</th><th class="num">14/10</th><th class="num">15/10</th><th class="num">16/10</th><th class="num">17/10</th><th class="num">Média dos dias</th></tr></thead>
+      <thead><tr><th>Processo</th><th class="num">Unidades</th><th class="num">Efetiva A (u/h)</th><th class="num">Efetiva B (neta sist.)</th><th class="num">Neta (u/h)</th><th class="num">Utilização</th><th class="num">Meta efetiva</th><th class="num">% meta efetiva</th><th class="num">% meta neta</th></tr></thead>
       <tbody>
-        <tr><td>inbound_audit</td><td class="num">158,8</td><td class="num">189,8</td><td class="num">118,1</td><td class="num">111,1</td><td class="num">122,4</td><td class="num">99,4</td><td class="num">95,7</td><td class="num"><strong>127,9</strong></td></tr>
-        <tr><td>movable_audit</td><td class="num">182,7</td><td class="num">—</td><td class="num">269,1</td><td class="num">316,1</td><td class="num">277,8</td><td class="num">298,8</td><td class="num">287,0</td><td class="num"><strong>271,9</strong></td></tr>
-        <tr><td>stock_audit</td><td class="num">47,3</td><td class="num">67,2</td><td class="num">65,7</td><td class="num">45,5</td><td class="num">57,2</td><td class="num">63,2</td><td class="num">61,5</td><td class="num"><strong>58,2</strong></td></tr>
-        <tr><td>open_transfer</td><td class="num">22,6</td><td class="num">24,8</td><td class="num">22,2</td><td class="num">25,7</td><td class="num">19,8</td><td class="num">22,0</td><td class="num">22,4</td><td class="num"><strong>22,8</strong></td></tr>
-        <tr><td>cycle_count</td><td class="num">—</td><td class="num">242,6</td><td class="num">207,3</td><td class="num">100,9</td><td class="num">171,3</td><td class="num">185,9</td><td class="num">—</td><td class="num"><strong>181,6</strong></td></tr>
-        <tr><td>corrective_count</td><td class="num">—</td><td class="num">24,9</td><td class="num">31,9</td><td class="num">37,2</td><td class="num">43,3</td><td class="num">43,8</td><td class="num">33,0</td><td class="num"><strong>35,7</strong></td></tr>
-        <tr><td>checkin</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">99,5</td><td class="num">101,7</td><td class="num">354,9</td><td class="num">—</td><td class="num"><strong>185,4</strong></td></tr>
-        <tr><td>putaway</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">310,3</td><td class="num">90,9</td><td class="num">81,1</td><td class="num">—</td><td class="num"><strong>160,8</strong></td></tr>
-        <tr><td>quarentine</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">31,8</td><td class="num">22,3</td><td class="num">26,1</td><td class="num">—</td><td class="num"><strong>26,7</strong></td></tr>
+        <tr><td>Cycle count</td><td class="num">12.314</td><td class="num">134,7</td><td class="num">111,6</td><td class="num">110,2</td><td class="num">79%</td><td class="num">188,0</td><td class="num bad">72%</td><td class="num warnc">88%</td></tr>
+        <tr><td>Inbound audit</td><td class="num">9.930</td><td class="num">119,9</td><td class="num">97,7</td><td class="num">96,2</td><td class="num">80%</td><td class="num">153,9</td><td class="num bad">78%</td><td class="num warnc">86%</td></tr>
+        <tr><td>Movable audit</td><td class="num">5.926</td><td class="num">298,7</td><td class="num">232,9</td><td class="num">232,9</td><td class="num">75%</td><td class="num">306,2</td><td class="num ok">98%</td><td class="num ok">139%</td></tr>
+        <tr><td>Stock audit</td><td class="num">4.027</td><td class="num">72,1</td><td class="num">64,0</td><td class="num">62,8</td><td class="num">88%</td><td class="num">62,6</td><td class="num ok">115%</td><td class="num ok">120%</td></tr>
+        <tr><td>Corrective count</td><td class="num">1.831</td><td class="num">28,1</td><td class="num">24,9</td><td class="num">24,9</td><td class="num">88%</td><td class="num">28,0</td><td class="num ok">100%</td><td class="num ok">100%</td></tr>
+        <tr><td>Open transfer</td><td class="num">1.087</td><td class="num">31,0</td><td class="num">15,8</td><td class="num">12,8</td><td class="num">40%</td><td class="num">80,7</td><td class="num bad">38%</td><td class="num bad">34%</td></tr>
+        <tr><td>Checkin</td><td class="num">30</td><td class="num">175,4</td><td class="num">165,6</td><td class="num">152,8</td><td class="num">94%</td><td class="num">193,5</td><td class="num warnc">91%</td><td class="num ok">145%</td></tr>
+        <tr><td>Cubing & product data</td><td class="num">84</td><td class="num">23,2</td><td class="num">20,8</td><td class="num">16,7</td><td class="num">90%</td><td class="num">25,6</td><td class="num warnc">91%</td><td class="num warnc">90%</td></tr>
       </tbody>
     </table>
-    </div>
-    <p class="note">Valores da ferramenta get_productivity (modo macro), por dia. Média dos dias = média simples dos dias com dado. Efetiva A ponderada por horas, neta e metas por dia ainda não consolidadas para a semana.</p>
-  </section>
+  </div>
+  <div class="footer">8 processos · metas: valores do dia 19/10 do Polaris</div>
+</div>
 
-  <section class="card span-12">
-    <h2>AT por operador <small>meta 95% · semana 11/10 a 17/10 · pior AT primeiro</small></h2>
-    <div class="scroll">
+<!-- AT por operador -->
+<div class="card" data-export="at">
+  <div class="card-head">
+    <div>
+      <h2>AT por operador</h2>
+      <div class="sub">Tiempo disponible do período 19/10 a 23/10, do pior para o melhor. Meta 95%. Média do time: 96,1%.</div>
+    </div>
+    <div class="actions">
+      <button class="btn" onclick="exportCSV('at')">Exportar</button>
+    </div>
+  </div>
+  <div class="table-wrap">
     <table>
-      <thead><tr><th>Operador</th><th class="num">AT</th><th>Situação</th></tr></thead>
+      <thead><tr><th>Operador</th><th>Status</th><th class="num">AT</th><th class="num">TND</th><th>Fichaje</th></tr></thead>
       <tbody>
-        <tr class="abaixo"><td>alqsouza</td><td class="num">46,1%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>dimoreira</td><td class="num">58,2%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>wglaurang</td><td class="num">60,1%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>willianspere</td><td class="num">70,2%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>carlosedalme</td><td class="num">78,1%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>cafaraujo</td><td class="num">79,5%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>eduardogsilv</td><td class="num">79,9%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>fromanini</td><td class="num">80,1%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>luipires</td><td class="num">82,4%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>leanddasilva</td><td class="num">82,9%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>rcosoliveira</td><td class="num">83,5%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr class="abaixo"><td>sicarneiro</td><td class="num">94,9%</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-        <tr><td>rirbbatista</td><td class="num">95,7%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>matrgomes</td><td class="num">98,3%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>danieloli</td><td class="num">98,6%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>uanbarros</td><td class="num">98,9%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>nvitor</td><td class="num">99,5%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>ricfilho</td><td class="num">99,7%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>lucianamsilv</td><td class="num">99,7%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>ronaldolima</td><td class="num">100,0%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>leidilopes</td><td class="num">100,4%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>evdemelo</td><td class="num">100,5%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>larissasmart</td><td class="num">100,9%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>adnilsonmbar</td><td class="num">101,1%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>amuelsaolive</td><td class="num">101,1%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>rogalves</td><td class="num">101,4%</td><td><span class="pill good">OK</span></td></tr>
-        <tr><td>wemoreira</td><td class="num">107,2%</td><td><span class="pill warn">Conferir (acima de 100%)</span></td></tr>
+        <tr class="below"><td>dimoreira</td><td><span class="dot bad"></span>Abaixo da meta</td><td class="num bad">68%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr class="below"><td>wglaurang</td><td><span class="dot bad"></span>Abaixo da meta</td><td class="num bad">75%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr class="below"><td>alqsouza</td><td><span class="dot bad"></span>Abaixo da meta</td><td class="num bad">75%</td><td class="num">0,2 h</td><td></td></tr>
+        <tr class="below"><td>luipires</td><td><span class="dot bad"></span>Abaixo da meta</td><td class="num bad">87%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr class="below"><td>evdemelo</td><td><span class="dot bad"></span>Abaixo da meta</td><td class="num bad">90%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>rirbbatista</td><td><span class="dot ok"></span>Na meta</td><td class="num">96%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>danieloli</td><td><span class="dot ok"></span>Na meta</td><td class="num">97%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>rcosoliveira</td><td><span class="dot ok"></span>Na meta</td><td class="num">98%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>matrgomes</td><td><span class="dot ok"></span>Na meta</td><td class="num">99%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>willianspere</td><td><span class="dot ok"></span>Na meta</td><td class="num">99%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>sicarneiro</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>fromanini</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>ricfilho</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>lucianamsilv</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>eduardogsilv</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>rogalves</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>leanddasilva</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>carlosedalme</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>uanbarros</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>cafaraujo</td><td><span class="dot ok"></span>Na meta</td><td class="num">100%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>ronaldolima</td><td><span class="dot ok"></span>Na meta</td><td class="num">101%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>larissasmart</td><td><span class="dot ok"></span>Na meta</td><td class="num">101%</td><td class="num">0,1 h</td><td></td></tr>
+        <tr><td>adnilsonmbar</td><td><span class="dot ok"></span>Na meta</td><td class="num">101%</td><td class="num">0,0 h</td><td></td></tr>
+        <tr><td>jjttakahashi</td><td><span class="dot ok"></span>Na meta</td><td class="num">101%</td><td class="num">4,2 h</td><td></td></tr>
+        <tr><td>wemoreira</td><td><span class="dot ok"></span>Na meta</td><td class="num">112%</td><td class="num">0,1 h</td><td>3 CIA (1.456 min) · 3 COA (1.711 min)</td></tr>
       </tbody>
     </table>
+  </div>
+  <div class="footer">25 operadores · 5 abaixo da meta de 95%</div>
+</div>
+
+<!-- Ociosidade -->
+<div class="card" data-export="ociosidade">
+  <div class="card-head">
+    <div>
+      <h2>Ociosidade por operador e processo</h2>
+      <div class="sub">Ociosidade = 1 − utilização, por processo (ociosidad_general do Polaris, ponderado pelas horas de processo). Só processos com pelo menos 0,05 h. Coluna final = ociosidade geral do operador. Vermelho acima de 30%, laranja de 20% a 30%. "—" = sem horas no processo.</div>
     </div>
-    <p class="note">Média da equipe: 88,9%. 12 de 27 reps abaixo de 95%. Fonte: get_available_time (período 11/10 a 17/10).</p>
-  </section>
-
-  <section class="card span-12">
-    <h2>Ociosidade por operador e processo <small>semana</small></h2>
-    <div class="alert">Pendente: a ociosidade por operador exige consolidar as linhas diárias de get_productivity por operador e processo. Ainda não consolidada.</div>
-  </section>
-
-  <section class="card span-12">
-    <h2>Taxa de erro por operador <small>CAD BRSP10 · erros ÷ unidades · meta 0,17%</small></h2>
-    <div class="alert">Fonte: Erros Operacionais - MLB (versão 28, gerado em 21/10, dados até 20/10). Período 11/10 a 17/10; semana anterior 04/10 a 10/10.</div>
-    <div class="scroll">
+    <div class="actions">
+      <button class="btn" onclick="exportCSV('ociosidade')">Exportar</button>
+    </div>
+  </div>
+  <div class="table-wrap">
     <table>
-      <thead><tr><th>Operador</th><th class="num">Erros (11–17/10)</th><th class="num">Unidades (11–17/10)</th><th class="num">Taxa semana</th><th class="num">Taxa semana anterior</th><th>Situação</th></tr></thead>
+      <thead><tr><th>Operador</th><th class="num">Cycle</th><th class="num">Inbound</th><th class="num">Movable</th><th class="num">Stock</th><th class="num">Corrective</th><th class="num">Open</th><th class="num">Geral</th></tr></thead>
       <tbody>
-        <tr><td>adnilsonmbar</td><td class="num">7</td><td class="num">1.303</td><td class="num">0,54%</td><td class="num">0,00%</td><td><span class="pill bad">Acima da meta</span></td></tr>
-        <tr><td>cafaraujo</td><td class="num">6</td><td class="num">1.129</td><td class="num">0,53%</td><td class="num">1,58%</td><td><span class="pill bad">Acima da meta</span></td></tr>
-        <tr><td>carlosedalme</td><td class="num">9</td><td class="num">1.986</td><td class="num">0,45%</td><td class="num">0,00%</td><td><span class="pill bad">Acima da meta</span></td></tr>
-        <tr><td>fromanini</td><td class="num">2</td><td class="num">1.199</td><td class="num">0,17%</td><td class="num">0,30%</td><td><span class="pill good">Dentro da meta</span></td></tr>
-        <tr><td>rogalves</td><td class="num">3</td><td class="num">2.191</td><td class="num">0,14%</td><td class="num">0,00%</td><td><span class="pill good">Dentro da meta</span></td></tr>
-        <tr><td>wglaurang</td><td class="num">1</td><td class="num">821</td><td class="num">0,12%</td><td class="num">0,37%</td><td><span class="pill good">Dentro da meta</span></td></tr>
-        <tr><td>wemoreira</td><td class="num">1</td><td class="num">1.245</td><td class="num">0,08%</td><td class="num">0,72%</td><td><span class="pill good">Dentro da meta</span></td></tr>
-        <tr><td>ricfilho</td><td class="num">0</td><td class="num">598</td><td class="num">0,00%</td><td class="num">1,21%</td><td><span class="pill good">Dentro da meta</span></td></tr>
-        <tr><td>ronaldolima</td><td class="num">0</td><td class="num">0</td><td class="num">sem unidades</td><td class="num">4,28%</td><td><span class="pill warn">Sem unidades na semana</span></td></tr>
-        <tr><td>lucianamsilv</td><td class="num">0</td><td class="num">0</td><td class="num">sem unidades</td><td class="num">2,43%</td><td><span class="pill warn">Sem unidades na semana</span></td></tr>
-        <tr><td>uanbarros</td><td class="num">0</td><td class="num">0</td><td class="num">sem unidades</td><td class="num">1,95%</td><td><span class="pill warn">Sem unidades na semana</span></td></tr>
-        <tr><td>danieloli</td><td class="num">0</td><td class="num">0</td><td class="num">sem unidades</td><td class="num">0,81%</td><td><span class="pill warn">Sem unidades na semana</span></td></tr>
-        <tr><td>rcosoliveira</td><td class="num">0</td><td class="num">0</td><td class="num">sem unidades</td><td class="num">1,30%</td><td><span class="pill warn">Sem unidades na semana</span></td></tr>
-        <tr><td>eduardogsilv</td><td class="num">0</td><td class="num">0</td><td class="num">sem unidades</td><td class="num">2,48%</td><td><span class="pill warn">Sem unidades na semana</span></td></tr>
-        <tr><td>alqsouza</td><td class="num">0</td><td class="num">0</td><td class="num">sem unidades</td><td class="num">1,00%</td><td><span class="pill warn">Sem unidades na semana</span></td></tr>
-        <tr><td>nvitor, matrgomes, rirbbatista, sicarneiro, willianspere</td><td class="num">0</td><td class="num">0</td><td class="num">sem unidades</td><td class="num">sem unidades</td><td><span class="pill warn">Sem unidades</span></td></tr>
-        <tr><td>amuelsaolive, larissasmart, evdemelo, leidilopes, leanddasilva, luipires, dimoreira</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td><span class="pill warn">Sem registro no Grid</span></td></tr>
-        <tr style="background:#f4f6fb"><td><strong>Time</strong></td><td class="num"><strong>29</strong></td><td class="num"><strong>10.472</strong></td><td class="num"><strong>0,28%</strong></td><td class="num"><strong>1,40% (195 de 13.908)</strong></td><td><span class="pill bad">Acima da meta 0,17%</span></td></tr>
+        <tr><td>danieloli</td><td class="num">67%</td><td class="num">34%</td><td class="num">32%</td><td class="num">46%</td><td class="num">—</td><td class="num">56%</td><td class="num bad"><b>35%</b></td></tr>
+        <tr><td>jjttakahashi</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">70%</td><td class="num bad"><b>34%</b></td></tr>
+        <tr><td>adnilsonmbar</td><td class="num">24%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">68%</td><td class="num warnc"><b>29%</b></td></tr>
+        <tr><td>carlosedalme</td><td class="num">21%</td><td class="num">100%</td><td class="num">—</td><td class="num">11%</td><td class="num">—</td><td class="num">67%</td><td class="num warnc"><b>28%</b></td></tr>
+        <tr><td>rogalves</td><td class="num">27%</td><td class="num">18%</td><td class="num">48%</td><td class="num">8%</td><td class="num">—</td><td class="num">67%</td><td class="num warnc"><b>28%</b></td></tr>
+        <tr><td>wemoreira</td><td class="num">28%</td><td class="num">—</td><td class="num">—</td><td class="num">19%</td><td class="num">—</td><td class="num">66%</td><td class="num warnc"><b>27%</b></td></tr>
+        <tr><td>rirbbatista</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">42%</td><td class="num warnc"><b>25%</b></td></tr>
+        <tr><td>fromanini</td><td class="num">13%</td><td class="num">19%</td><td class="num">—</td><td class="num">25%</td><td class="num">—</td><td class="num">65%</td><td class="num warnc"><b>24%</b></td></tr>
+        <tr><td>alqsouza</td><td class="num">—</td><td class="num">25%</td><td class="num">25%</td><td class="num">17%</td><td class="num">—</td><td class="num">66%</td><td class="num warnc"><b>24%</b></td></tr>
+        <tr><td>ricfilho</td><td class="num">17%</td><td class="num">17%</td><td class="num">—</td><td class="num">15%</td><td class="num">—</td><td class="num">62%</td><td class="num warnc"><b>23%</b></td></tr>
+        <tr><td>wglaurang</td><td class="num">—</td><td class="num">20%</td><td class="num">7%</td><td class="num">9%</td><td class="num">—</td><td class="num">52%</td><td class="num warnc"><b>23%</b></td></tr>
+        <tr><td>cafaraujo</td><td class="num">14%</td><td class="num">15%</td><td class="num">16%</td><td class="num">5%</td><td class="num">—</td><td class="num">67%</td><td class="num warnc"><b>21%</b></td></tr>
+        <tr><td>ronaldolima</td><td class="num">12%</td><td class="num">23%</td><td class="num">—</td><td class="num">9%</td><td class="num">—</td><td class="num">65%</td><td class="num warnc"><b>21%</b></td></tr>
+        <tr><td>lucianamsilv</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">11%</td><td class="num">61%</td><td class="num"><b>19%</b></td></tr>
+        <tr><td>sicarneiro</td><td class="num">15%</td><td class="num">—</td><td class="num">—</td><td class="num">7%</td><td class="num">13%</td><td class="num">70%</td><td class="num"><b>18%</b></td></tr>
+        <tr><td>rcosoliveira</td><td class="num">100%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">9%</td><td class="num">62%</td><td class="num"><b>17%</b></td></tr>
+        <tr><td>eduardogsilv</td><td class="num">8%</td><td class="num">9%</td><td class="num">—</td><td class="num">8%</td><td class="num">—</td><td class="num">67%</td><td class="num"><b>17%</b></td></tr>
+        <tr><td>willianspere</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">17%</td><td class="num">70%</td><td class="num"><b>16%</b></td></tr>
+        <tr><td>larissasmart</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>9%</b></td></tr>
+        <tr><td>uanbarros</td><td class="num">100%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>8%</b></td></tr>
+        <tr><td>matrgomes</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">80%</td><td class="num"><b>8%</b></td></tr>
+        <tr><td>leanddasilva</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>0%</b></td></tr>
+        <tr><td>evdemelo</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>0%</b></td></tr>
+        <tr><td>luipires</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>0%</b></td></tr>
+        <tr><td>dimoreira</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>0%</b></td></tr>
       </tbody>
     </table>
-    </div>
-    <p class="note">Operadores sem unidades no período não têm taxa. Os 7 sem registro no Grid não aparecem na base de erros de BRSP10.</p>
-  </section>
+  </div>
+  <div class="footer">25 operadores</div>
+</div>
 
-  <section class="card span-12">
-    <h2>Fast start e strong finish por dia <small>no prazo · operadores com maior atraso</small></h2>
-    <div class="scroll">
+<!-- Fast start / strong finish -->
+<div class="card" data-export="fssf">
+  <div class="card-head">
+    <div>
+      <h2>Fast start e strong finish por dia</h2>
+      <div class="sub">Quantidade no prazo sobre total de operadores avaliados em cada KPI.</div>
+    </div>
+    <div class="actions">
+      <button class="btn" onclick="exportCSV('fssf')">Exportar</button>
+    </div>
+  </div>
+  <div class="table-wrap">
     <table>
-      <thead><tr><th>Dia</th><th class="num">Fast start no prazo</th><th class="num">Taxa FS</th><th class="num">Strong finish no prazo</th><th class="num">Taxa SF</th><th>Maiores atrasos no strong finish</th></tr></thead>
+      <thead><tr><th>Dia</th><th class="num">Fast start no prazo</th><th class="num">Strong finish no prazo</th><th>Maiores atrasos no strong finish</th></tr></thead>
       <tbody>
-        <tr><td>11/10</td><td class="num">4 de 4</td><td class="num"><span class="pill good">100%</span></td><td class="num">3 de 7</td><td class="num"><span class="pill bad">43%</span></td><td>rcosoliveira, willianspere, rogalves, danieloli</td></tr>
-        <tr><td>12/10</td><td class="num">8 de 8</td><td class="num"><span class="pill good">100%</span></td><td class="num">2 de 5</td><td class="num"><span class="pill bad">40%</span></td><td>wglaurang, cafaraujo, alqsouza</td></tr>
-        <tr><td>13/10</td><td class="num">14 de 15</td><td class="num"><span class="pill warn">93%</span></td><td class="num">4 de 10</td><td class="num"><span class="pill bad">40%</span></td><td>cafaraujo, rcosoliveira, nvitor, alqsouza, wglaurang</td></tr>
-        <tr><td>14/10</td><td class="num">14 de 16</td><td class="num"><span class="pill warn">88%</span></td><td class="num">7 de 15</td><td class="num"><span class="pill bad">47%</span></td><td>larissasmart, danieloli, wglaurang, rcosoliveira, willianspere</td></tr>
-        <tr><td>15/10</td><td class="num">12 de 14</td><td class="num"><span class="pill warn">86%</span></td><td class="num">6 de 13</td><td class="num"><span class="pill bad">46%</span></td><td>sicarneiro, willianspere, rogalves, cafaraujo, rcosoliveira</td></tr>
-        <tr><td>16/10</td><td class="num">8 de 9</td><td class="num"><span class="pill warn">89%</span></td><td class="num">6 de 15</td><td class="num"><span class="pill bad">40%</span></td><td>amuelsaolive, lucianamsilv, cafaraujo, willianspere, wglaurang</td></tr>
-        <tr><td>17/10</td><td class="num">5 de 5</td><td class="num"><span class="pill good">100%</span></td><td class="num">4 de 10</td><td class="num"><span class="pill bad">40%</span></td><td>rirbbatista, lucianamsilv, willianspere, danieloli, rcosoliveira</td></tr>
-        <tr style="background:#f4f6fb"><td><strong>Semana</strong></td><td class="num"><strong>65 de 71</strong></td><td class="num"><strong>92%</strong></td><td class="num"><strong>32 de 75</strong></td><td class="num"><strong>43%</strong></td><td></td></tr>
+        <tr><td>19/10</td><td class="num ok">10 / 10 (100%)</td><td class="num bad">2 / 5 (40%)</td><td>alqsouza, cafaraujo, wglaurang</td></tr>
+        <tr><td>20/10</td><td class="num ok">15 / 15 (100%)</td><td class="num bad">2 / 8 (25%)</td><td>lucianamsilv, adnilsonmbar, cafaraujo, wglaurang, sicarneiro</td></tr>
+        <tr><td>21/10</td><td class="num warnc">14 / 15 (93,3%): rcosoliveira 29 min</td><td class="num bad">2 / 12 (16,7%)</td><td>sicarneiro, adnilsonmbar, lucianamsilv, cafaraujo, willianspere</td></tr>
+        <tr><td>22/10</td><td class="num warnc">15 / 16 (93,8%): danieloli 41 min</td><td class="num bad">2 / 14 (14,3%)</td><td>alqsouza, sicarneiro, wglaurang, lucianamsilv, willianspere</td></tr>
+        <tr><td>23/10</td><td class="num ok">13 / 13 (100%)</td><td class="num bad">2 / 12 (16,7%)</td><td>danieloli, lucianamsilv, ronaldolima, cafaraujo, sicarneiro</td></tr>
+        <tr style="font-weight:600"><td>Período</td><td class="num">67 / 69 (97,1%)</td><td class="num bad">10 / 51 (19,6%)</td><td></td></tr>
       </tbody>
     </table>
-    </div>
-    <p class="note">Fonte: get_fast_start_strong_finish, um dia por vez. Taxa semanal calculada sobre o total de registros do período.</p>
-  </section>
+  </div>
+</div>
+
 </main>
+<script>
+function exportCSV(key){
+  var card=document.querySelector('[data-export="'+key+'"]');
+  if(!card) return;
+  var rows=[];
+  card.querySelectorAll('tr').forEach(function(tr){
+    var cells=[];
+    tr.querySelectorAll('th,td').forEach(function(c){
+      cells.push('"'+c.textContent.replace(/\s+/g,' ').trim().replace(/"/g,'""')+'"');
+    });
+    if(cells.length) rows.push(cells.join(';'));
+  });
+  var blob=new Blob(['﻿'+rows.join('\n')],{type:'text/csv;charset=utf-8'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='polaris-'+key+'-19-23-10.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+</script>
 </body>
 </html>
