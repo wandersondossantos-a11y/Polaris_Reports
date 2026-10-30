@@ -1,172 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Produtividade do time · 26/10 a 27/10/2026</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produtividade do time · 27/10/2026</title>
 <style>
-:root { color-scheme: light; }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: #f4f6fa; color: #1b2433; }
-header { background: linear-gradient(135deg, #0b1f3a 0%, #1d3b66 100%); color: #fff; padding: 22px 32px; }
-header h1 { margin: 0 0 8px; font-size: 22px; font-weight: 600; }
-.tag { display: inline-block; background: #ffe066; color: #0b1f3a; padding: 3px 10px; border-radius: 12px; font-size: 13px; font-weight: 600; }
-.sub { font-size: 13px; opacity: .85; margin-top: 8px; }
-main { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; padding: 24px 32px; }
-.card { background: #fff; border-radius: 10px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(11,31,58,.08); }
-.span-12 { grid-column: span 12; }
-.span-6 { grid-column: span 6; }
-.span-4 { grid-column: span 4; }
-h2 { margin: 0 0 12px; font-size: 16px; color: #0b1f3a; }
-.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.kpi { background: #fff; border-radius: 10px; padding: 16px; box-shadow: 0 1px 3px rgba(11,31,58,.08); border-top: 4px solid #1d3b66; }
-.kpi .v { font-size: 26px; font-weight: 700; color: #0b1f3a; }
-.kpi .l { font-size: 12px; color: #5a6578; margin-top: 4px; }
-.kpi.bad { border-top-color: #d64545; }
-.kpi.ok { border-top-color: #2e9e5b; }
-.kpi.warn { border-top-color: #e0a100; }
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e6eaf2; }
-th { font-size: 12px; color: #5a6578; font-weight: 600; text-transform: uppercase; letter-spacing: .02em; }
-td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-.pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
-.pill.good { background: #dff5e7; color: #1d7a43; }
-.pill.bad { background: #fde2e2; color: #a52828; }
-.pill.warn { background: #fff3cc; color: #8a6400; }
-.pill.neutral { background: #e8ecf3; color: #46526a; }
-.bar { position: relative; height: 10px; background: #e8ecf3; border-radius: 6px; overflow: hidden; min-width: 120px; }
-.bar > span { display: block; height: 100%; border-radius: 6px; }
-.bar.b-ok > span { background: #2e9e5b; }
-.bar.b-warn > span { background: #e0a100; }
-.bar.b-bad > span { background: #d64545; }
-.bar .mark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: #0b1f3a; left: 100%; }
-.legend { font-size: 12px; color: #5a6578; margin-top: 10px; }
-.note { font-size: 12px; color: #5a6578; margin-top: 10px; line-height: 1.5; }
-.gap { background: #fff8e1; border-left: 4px solid #e0a100; padding: 12px 14px; border-radius: 6px; font-size: 13px; margin-bottom: 4px; }
-@media (max-width: 900px) { .span-6, .span-4 { grid-column: span 12; } .kpis { grid-template-columns: repeat(2, 1fr); } }
+:root{--navy:#0f2747;--navy2:#1c3c6b;--yellow:#ffe14d;--bg:#f4f6fa;--card:#fff;--ink:#1d2433;--muted:#6b7487;--line:#e4e8f0;--good:#1f9d55;--bad:#d64545;--warn:#e0a100;--neutral:#8a94a6}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:22px 28px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+header h1{font-size:20px;margin:0;font-weight:700}
+.tag{background:var(--yellow);color:var(--navy);font-weight:700;border-radius:999px;padding:5px 12px;font-size:12px}
+main{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:20px 28px 40px}
+.card{background:var(--card);border-radius:14px;padding:16px 18px;box-shadow:0 1px 2px rgba(15,39,71,.06);min-width:0}
+.c12{grid-column:span 12}
+h2{font-size:15px;margin:0 0 10px;color:var(--navy)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:900px){.kpis{grid-template-columns:1fr}}
+.kpi{background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:0 1px 2px rgba(15,39,71,.06);border-left:5px solid var(--neutral)}
+.kpi.good{border-color:var(--good)}.kpi.bad{border-color:var(--bad)}.kpi.warn{border-color:var(--warn)}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+.kpi .v{font-size:26px;font-weight:700;margin:4px 0 2px}
+.kpi .h{color:var(--muted);font-size:12px}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;text-transform:uppercase;color:var(--muted);letter-spacing:.03em;font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tr.total td{font-weight:700;background:#f7f9fc}
+.pill{display:inline-block;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600}
+.pill.good{background:#e3f6ea;color:var(--good)}
+.pill.bad{background:#fbe5e5;color:var(--bad)}
+.pill.warn{background:#fff4d1;color:#8a6500}
+.pill.neutral{background:#eef1f6;color:var(--muted)}
+.bar{height:8px;background:#eef1f6;border-radius:99px;overflow:hidden;min-width:90px;display:inline-block;vertical-align:middle;width:120px;margin-right:6px}
+.bar>i{display:block;height:100%;background:var(--navy2)}
+.bar.bad>i{background:var(--bad)}.bar.good>i{background:var(--good)}
+.gap{background:#fff4d1;border:1px solid #f1d98a;color:#5c4500;border-radius:12px;padding:12px 16px}
+.gap ul{margin:6px 0 0 18px;padding:0}
+.note{color:var(--muted);font-size:12px;margin-top:8px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.scroll{overflow-x:auto}
 </style>
 </head>
 <body>
 <header>
-  <h1>Produtividade do time · 26/10/2026 a 27/10/2026</h1>
-  <span class="tag">Período 26/10 – 27/10 · modo macro</span>
-  <div class="sub">Fonte: Polaris (get_productivity, modo macro). Valores de produtividade e metas do período inteiro; o detalhe por operador não é filtrado por turno.</div>
+  <h1>Produtividade do time · 27/10/2026</h1>
+  <span class="tag">Turno 27/10 23:05 → 28/10 07:50</span>
 </header>
-
 <main>
 
-  <section class="span-12 kpis">
-    <div class="kpi bad"><div class="v">1 de 7</div><div class="l">Processos acima da meta efetiva</div></div>
-    <div class="kpi bad"><div class="v">43,0%</div><div class="l">Menor atingimento: open_transfer (37,59 de 87,45 u/h)</div></div>
-    <div class="kpi warn"><div class="v">8</div><div class="l">Linhas de operador com 0 u/h e tempo de processo registrado</div></div>
-    <div class="kpi ok"><div class="v">109,0%</div><div class="l">Maior atingimento: stock_audit (68,72 de 63,03 u/h)</div></div>
-  </section>
+<section class="c12 kpis">
+  <div class="kpi good"><div class="l">AT médio (dia 27/10)</div><div class="v">96%</div><div class="h">Meta 80% · 25 reps · dia inteiro</div></div>
+  <div class="kpi good"><div class="l">Fast start no prazo</div><div class="v">100%</div><div class="h">14 de 14 · dia 27/10</div></div>
+  <div class="kpi bad"><div class="l">Strong finish no prazo</div><div class="v">43%</div><div class="h">3 de 7 · 4 atrasos · média 5,5 min · dia 27/10</div></div>
+</section>
 
-  <section class="span-12 card">
-    <h2>1. Produtividade por processo</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Processo</th>
-          <th class="num">Efetiva (u/h)</th>
-          <th class="num">Meta efetiva</th>
-          <th>% da meta efetiva</th>
-          <th class="num">Neta (u/h)</th>
-          <th class="num">Meta neta</th>
-          <th>% da meta neta</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>corrective_count</td><td class="num">15,28</td><td class="num">29,06</td><td><div class="bar b-bad"><span style="width:52.6%"></span></div> <span class="pill bad">52,6%</span></td><td class="num">13,51</td><td class="num">26,49</td><td><span class="pill bad">51,0%</span></td></tr>
-        <tr><td>cycle_count</td><td class="num">155,91</td><td class="num">187,80</td><td><div class="bar b-warn"><span style="width:83.0%"></span></div> <span class="pill warn">83,0%</span></td><td class="num">120,26</td><td class="num">131,50</td><td><span class="pill warn">91,5%</span></td></tr>
-        <tr><td>inbound_audit</td><td class="num">118,10</td><td class="num">144,89</td><td><div class="bar b-warn"><span style="width:81.5%"></span></div> <span class="pill warn">81,5%</span></td><td class="num">95,35</td><td class="num">113,01</td><td><span class="pill warn">84,4%</span></td></tr>
-        <tr><td>movable_audit</td><td class="num">241,50</td><td class="num">295,68</td><td><div class="bar b-warn"><span style="width:81.7%"></span></div> <span class="pill warn">81,7%</span></td><td class="num">139,95</td><td class="num">172,60</td><td><span class="pill warn">81,1%</span></td></tr>
-        <tr><td>open_transfer</td><td class="num">37,59</td><td class="num">87,45</td><td><div class="bar b-bad"><span style="width:43.0%"></span></div> <span class="pill bad">43,0%</span></td><td class="num">14,51</td><td class="num">47,00</td><td><span class="pill bad">30,9%</span></td></tr>
-        <tr><td>quarentine</td><td class="num">32,50</td><td class="num">42,86</td><td><div class="bar b-warn"><span style="width:75.8%"></span></div> <span class="pill warn">75,8%</span></td><td class="num">28,77</td><td class="num">38,15</td><td><span class="pill warn">75,4%</span></td></tr>
-        <tr><td>stock_audit</td><td class="num">68,72</td><td class="num">63,03</td><td><div class="bar b-ok"><span style="width:100%"></span></div> <span class="pill good">109,0%</span></td><td class="num">61,44</td><td class="num">53,25</td><td><span class="pill good">115,4%</span></td></tr>
-      </tbody>
-    </table>
-    <div class="note">Médias por processo calculadas pela ferramenta (média simples entre operadores, não ponderada por horas). Barras com escala até 100% da meta.</div>
-  </section>
+<section class="c12 card">
+  <div class="gap">
+    <strong>Pontos em aberto</strong>
+    <ul>
+      <li>AT do dia inteiro de 27/10 (a ferramenta não filtra por turno). A utilização do AT está zerada para 18 de 25 operadores, o que indica dado incompleto na fonte.</li>
+      <li>Quarentine sem atividade registrada no turno.</li>
+    </ul>
+  </div>
+</section>
 
-  <section class="span-6 card">
-    <h2>2. Operadores abaixo da meta (0 u/h com tempo de processo)</h2>
-    <table>
-      <thead><tr><th>Operador (LDAP)</th><th>Processo</th><th class="num">Efetiva</th><th>Status</th></tr></thead>
-      <tbody>
-        <tr><td>rcosoliveira</td><td>corrective_count</td><td class="num">0,0</td><td><span class="pill bad">0% da meta</span></td></tr>
-        <tr><td>rogalves</td><td>cycle_count</td><td class="num">0,0</td><td><span class="pill bad">0% da meta</span></td></tr>
-        <tr><td>alqsouza</td><td>cycle_count</td><td class="num">0,0</td><td><span class="pill bad">0% da meta</span></td></tr>
-        <tr><td>sicarneiro</td><td>cycle_count</td><td class="num">0,0</td><td><span class="pill bad">0% da meta</span></td></tr>
-        <tr><td>wglaurang</td><td>cycle_count</td><td class="num">0,0</td><td><span class="pill bad">0% da meta</span></td></tr>
-        <tr><td>lucianamsilv</td><td>cycle_count</td><td class="num">0,0</td><td><span class="pill bad">0% da meta</span></td></tr>
-        <tr><td>wglaurang</td><td>inbound_audit</td><td class="num">0,0</td><td><span class="pill bad">0% da meta</span></td></tr>
-        <tr><td>carlosedalme</td><td>stock_audit</td><td class="num">0,0</td><td><span class="pill bad">0% da meta</span></td></tr>
-      </tbody>
-    </table>
-    <div class="note">Esses operadores têm tempo de processo registrado sem unidades no período. Confirmar se é ausência, troca de processo ou lançamento incompleto antes de usar como feedback.</div>
-  </section>
+<section class="c12 card">
+  <h2>Produtividade por processo · turno</h2>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Processo</th><th class="n">Unidades</th><th class="n">Efetiva (u/h)</th><th class="n">Meta efetiva</th><th class="n">% da meta</th><th>Utilização</th></tr></thead>
+    <tbody>
+      <tr><td>corrective_count</td><td class="n">516</td><td class="n">33,0</td><td class="n">29,06</td><td class="n"><span class="pill good">113,5%</span></td><td><span class="bar good"><i style="width:84.3%"></i></span> 84,3%</td></tr>
+      <tr><td>cycle_count</td><td class="n">3.360</td><td class="n">150,8</td><td class="n">187,8</td><td class="n"><span class="pill bad">80,3%</span></td><td><span class="bar"><i style="width:77.2%"></i></span> 77,2%</td></tr>
+      <tr><td>inbound_audit</td><td class="n">2.379</td><td class="n">107,8</td><td class="n">144,89</td><td class="n"><span class="pill bad">74,4%</span></td><td><span class="bar"><i style="width:72.9%"></i></span> 72,9%</td></tr>
+      <tr><td>movable_audit</td><td class="n">845</td><td class="n">275,3</td><td class="n">295,68</td><td class="n"><span class="pill warn">93,1%</span></td><td><span class="bar"><i style="width:67%"></i></span> 67,0%</td></tr>
+      <tr><td>open_transfer</td><td class="n">248</td><td class="n">36,7</td><td class="n">87,45</td><td class="n"><span class="pill bad">42,0%</span></td><td><span class="bar bad"><i style="width:36.4%"></i></span> 36,4%</td></tr>
+      <tr><td>quarentine</td><td class="n">0</td><td class="n">—</td><td class="n">42,86</td><td class="n">—</td><td><span class="pill neutral">sem atividade no turno</span></td></tr>
+      <tr><td>stock_audit</td><td class="n">538</td><td class="n">61,5</td><td class="n">63,03</td><td class="n"><span class="pill warn">97,5%</span></td><td><span class="bar"><i style="width:82.1%"></i></span> 82,1%</td></tr>
+      <tr class="total"><td>Total produtivo</td><td class="n">7.886</td><td class="n">100,4</td><td class="n">—</td><td class="n">—</td><td>% efetivo do turno: 70,5% (78,58 h efetivas de 111,49 h)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note">Efetiva (u/h) = unidades ÷ horas efetivas. Utilização = horas efetivas ÷ horas do processo. Metas: média de metas do time por processo, dia inteiro de 27/10 (modo macro). Totais consideram só os sete processos produtivos; horas de processos não produtivos (lost_found, inventory, inconsistency, problem_solver, quality_control) não entram no % efetivo.</div>
+</section>
 
-  <section class="span-6 card">
-    <h2>3. Destaques por operador (efetiva ≥ 100% da meta)</h2>
-    <table>
-      <thead><tr><th>Operador (LDAP)</th><th>Processo</th><th class="num">Efetiva (u/h)</th><th class="num">% meta</th></tr></thead>
-      <tbody>
-        <tr><td>cafaraujo</td><td>stock_audit</td><td class="num">116,68</td><td class="num"><span class="pill good">185,1%</span></td></tr>
-        <tr><td>wglaurang</td><td>stock_audit</td><td class="num">86,65</td><td class="num"><span class="pill good">137,5%</span></td></tr>
-        <tr><td>eduardogsilv</td><td>stock_audit</td><td class="num">73,09</td><td class="num"><span class="pill good">116,0%</span></td></tr>
-        <tr><td>sicarneiro</td><td>inbound_audit</td><td class="num">179,15</td><td class="num"><span class="pill good">123,6%</span></td></tr>
-        <tr><td>ronaldolima</td><td>cycle_count</td><td class="num">184,07</td><td class="num"><span class="pill good">98,0%</span></td></tr>
-      </tbody>
-    </table>
-    <div class="note">Operadores com volume baixo (menos de 5 unidades ou menos de 0,5 h de processo) podem distorcer o atingimento, como em cafaraujo (stock_audit, 0,69 h).</div>
-  </section>
+<section class="c12 card">
+  <h2>Hora a hora do turno</h2>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Hora</th><th class="n">Unidades</th><th class="n">Horas efetivas</th><th class="n">Horas do processo</th><th class="n">% efetivo</th><th class="n">Efetiva (u/h)</th></tr></thead>
+    <tbody>
+      <tr><td>23 (27/10)</td><td class="n">193</td><td class="n">3,72</td><td class="n">13,14</td><td class="n">28,3%</td><td class="n">51,9</td></tr>
+      <tr><td>00 (28/10)</td><td class="n">1.023</td><td class="n">10,82</td><td class="n">13,25</td><td class="n">81,7%</td><td class="n">94,5</td></tr>
+      <tr><td>01</td><td class="n">1.169</td><td class="n">12,19</td><td class="n">15,77</td><td class="n">77,3%</td><td class="n">95,9</td></tr>
+      <tr><td>02</td><td class="n">907</td><td class="n">7,01</td><td class="n">11,87</td><td class="n">59,0%</td><td class="n">129,4</td></tr>
+      <tr><td>03</td><td class="n">6</td><td class="n">1,56</td><td class="n">2,26</td><td class="n">69,1%</td><td class="n">3,8</td></tr>
+      <tr><td>04</td><td class="n">1.242</td><td class="n">12,82</td><td class="n">14,46</td><td class="n">88,6%</td><td class="n">96,9</td></tr>
+      <tr><td>05</td><td class="n">1.236</td><td class="n">12,08</td><td class="n">15,18</td><td class="n">79,6%</td><td class="n">102,3</td></tr>
+      <tr><td>06</td><td class="n">1.229</td><td class="n">10,59</td><td class="n">13,61</td><td class="n">77,8%</td><td class="n">116,1</td></tr>
+      <tr><td>07</td><td class="n">881</td><td class="n">7,79</td><td class="n">11,94</td><td class="n">65,2%</td><td class="n">113,1</td></tr>
+      <tr class="total"><td>Total do turno</td><td class="n">7.886</td><td class="n">78,58</td><td class="n">111,49</td><td class="n">70,5%</td><td class="n">100,4</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
 
-  <section class="span-12 kpis">
-    <div class="kpi ok"><div class="v">90,3%</div><div class="l">AT médio do time (meta 80%) · 26 reps</div></div>
-    <div class="kpi ok"><div class="v">23 de 23</div><div class="l">Fast start no prazo (26/10 e 27/10)</div></div>
-    <div class="kpi bad"><div class="v">3 de 12</div><div class="l">Strong finish no prazo (25%)</div></div>
-    <div class="kpi warn"><div class="v">18,9 min</div><div class="l">Média de atraso no strong finish (9 casos)</div></div>
-  </section>
+<section class="c12 card">
+  <h2>AT por operador · dia inteiro 27/10</h2>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Operador</th><th class="n">AT</th><th class="n">TND</th><th class="n">Utilização</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>lucianamsilv</td><td class="n">76%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill bad">abaixo de 95%</span></td></tr>
+      <tr><td>cafaraujo</td><td class="n">78%</td><td class="n">0,0 h</td><td class="n">14%</td><td><span class="pill bad">abaixo de 95%</span></td></tr>
+      <tr><td>evdemelo</td><td class="n">88%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill bad">abaixo de 95%</span></td></tr>
+      <tr><td>luipires</td><td class="n">88%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill bad">abaixo de 95%</span></td></tr>
+      <tr><td>giobezerra</td><td class="n">90%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill bad">abaixo de 95%</span></td></tr>
+      <tr><td>dimoreira</td><td class="n">91%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill bad">abaixo de 95%</span></td></tr>
+      <tr><td>phnascimento</td><td class="n">98%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>matrgomes</td><td class="n">98%</td><td class="n">0,0 h</td><td class="n">40%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>carlosedalme</td><td class="n">99%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>fromanini</td><td class="n">99%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>willianspere</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>wglaurang</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>eduardogsilv</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>danieloli</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">33%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>ricfilho</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>leanddasilva</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>rogalves</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>uanbarros</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>ronaldolima</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">17%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>alqsouza</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">23%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>rcosoliveira</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">12%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>ysxavier</td><td class="n">100%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>adnilsonmbar</td><td class="n">101%</td><td class="n">0,0 h</td><td class="n">12%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>sicarneiro</td><td class="n">101%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr><td>larissasmart</td><td class="n">101%</td><td class="n">0,0 h</td><td class="n">0%</td><td><span class="pill good">ok</span></td></tr>
+      <tr class="total"><td>Média do time</td><td class="n">96%</td><td class="n">0,0 h</td><td class="n">—</td><td>meta 80%</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note">AT é do dia inteiro de 27/10 (não filtra por turno). Utilização zerada para 18 de 25 operadores, o que indica dado incompleto na fonte; use com cautela.</div>
+</section>
 
-  <section class="span-6 card">
-    <h2>4. Available Time (AT) por operador</h2>
-    <table>
-      <thead><tr><th>Operador (LDAP)</th><th class="num">AT</th><th class="num">TND</th><th class="num">EIT</th><th>Status</th></tr></thead>
-      <tbody>
-        <tr><td>rirbbatista</td><td class="num">13%</td><td class="num">0,0 h</td><td class="num">0,42 h</td><td><span class="pill bad">Abaixo de 80%</span></td></tr>
-        <tr><td>dimoreira</td><td class="num">46%</td><td class="num">0,0 h</td><td class="num">0,00 h</td><td><span class="pill bad">Abaixo de 80%</span></td></tr>
-        <tr><td>wglaurang</td><td class="num">50%</td><td class="num">0,0 h</td><td class="num">0,00 h</td><td><span class="pill bad">Abaixo de 80%</span></td></tr>
-        <tr><td>evdemelo</td><td class="num">87%</td><td class="num">0,0 h</td><td class="num">0,00 h</td><td><span class="pill warn">Abaixo de 95%</span></td></tr>
-        <tr><td>luipires</td><td class="num">88%</td><td class="num">0,0 h</td><td class="num">0,00 h</td><td><span class="pill warn">Abaixo de 95%</span></td></tr>
-        <tr><td>lucianamsilv</td><td class="num">88%</td><td class="num">0,0 h</td><td class="num">0,00 h</td><td><span class="pill warn">Abaixo de 95%</span></td></tr>
-        <tr><td>cafaraujo</td><td class="num">89%</td><td class="num">0,0 h</td><td class="num">0,19 h</td><td><span class="pill warn">Abaixo de 95%</span></td></tr>
-        <tr><td>giobezerra</td><td class="num">90%</td><td class="num">0,0 h</td><td class="num">0,00 h</td><td><span class="pill warn">Abaixo de 95%</span></td></tr>
-        <tr><td>demais operadores (18)</td><td class="num">98% a 101%</td><td class="num">—</td><td class="num">—</td><td><span class="pill good">Acima de 95%</span></td></tr>
-      </tbody>
-    </table>
-    <div class="note">AT do período inteiro (26/10 a 27/10), somado pela ferramenta. Fichaje: 0 CIA e 1 COA (larissasmart, 230 min).</div>
-  </section>
-
-  <section class="span-6 card">
-    <h2>5. Fast Start e Strong Finish por dia</h2>
-    <table>
-      <thead><tr><th>Dia</th><th class="num">Fast start no prazo</th><th class="num">Strong finish no prazo</th><th class="num">Média de atraso (strong finish)</th></tr></thead>
-      <tbody>
-        <tr><td>26/10</td><td class="num">9 de 9 (100%)</td><td class="num">0 de 5 (0%)</td><td class="num">29,6 min</td></tr>
-        <tr><td>27/10</td><td class="num">14 de 14 (100%)</td><td class="num">3 de 7 (42,9%)</td><td class="num">5,5 min</td></tr>
-        <tr><td><strong>Total</strong></td><td class="num"><strong>23 de 23</strong></td><td class="num"><strong>3 de 12 (25%)</strong></td><td class="num"><strong>18,9 min</strong></td></tr>
-      </tbody>
-    </table>
-    <div class="note">Strong finish atrasado (pior para o time): cafaraujo (45 min e 3 min), wglaurang (45 min), ricfilho (44 min e 5 min), eduardogsilv (7 min), carlosedalme (7 min), sicarneiro (10 min), lucianamsilv (4 min). Média calculada somando os atrasos de cada dia.</div>
-  </section>
-
-  <section class="span-12 card">
-    <h2>6. Leitura rápida</h2>
-    <div class="gap"><strong>Open_transfer</strong> é o maior gap do período: 43% da meta efetiva e 31% da neta. Pouco volume e muita ociosidade (utilização entre 11% e 44% nos operadores que atuaram).</div>
-    <div class="gap" style="margin-top:8px;"><strong>Corrective_count</strong> também está abaixo de 53% da meta efetiva, com volume pequeno (poucas unidades por operador).</div>
-    <div class="gap" style="margin-top:8px;"><strong>Cycle_count, inbound_audit, movable_audit e quarentine</strong> ficaram entre 75% e 84% da meta efetiva, na faixa de atenção.</div>
-  </section>
+<div class="c12 legend"><span><span class="pill good">bom</span></span><span><span class="pill warn">atenção</span></span><span><span class="pill bad">abaixo da meta</span></span><span><span class="pill neutral">sem dado</span></span></div>
 
 </main>
 </body>
