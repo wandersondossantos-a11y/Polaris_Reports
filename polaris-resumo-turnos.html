@@ -1,217 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Polaris - Turnos T1 e T2 (26/10 a 28/10/2026)</title>
-<style>:root{--navy:#2D3277;--yellow:#FFE600;--ink:#1c2233;--mute:#667085;--line:#e6e9f0;--bg:#f4f6fb;--card:#fff;--good:#12805c;--goodbg:#e6f6ef;--bad:#c23b3b;--badbg:#fdecec;--warn:#a86400;--warnbg:#fff5dd}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.45}
-header{background:linear-gradient(120deg,var(--navy) 0%,#3d44a0 60%,#5a62c4 100%);color:#fff;padding:28px 32px 84px}
-header .tag{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
-header h1{margin:12px 0 4px;font-size:26px;font-weight:700}
-header p{margin:0;opacity:.85;font-size:13px}
-main{max-width:1280px;margin:-64px auto 40px;padding:0 24px;display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
-.card{background:var(--card);border-radius:14px;padding:20px 22px;box-shadow:0 1px 2px rgba(16,24,40,.06),0 4px 16px rgba(16,24,40,.06);border:1px solid var(--line);scroll-margin-top:12px;grid-column:span 12}
-h2{margin:0 0 14px;font-size:16px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-h2 small{font-weight:500;color:var(--mute);font-size:12px}
-.kpi{background:linear-gradient(180deg,#fff,#f8f9fd);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
-.kpi .v{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
-.kpi .l{color:var(--mute);font-size:12px;margin-top:4px}
-.kpi .s{font-size:12px;margin-top:8px;font-weight:600}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:6px}
-@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}}
-table{width:100%;border-collapse:separate;border-spacing:0}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
-th{color:var(--mute);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;background:#fafbfd}
-tbody tr:hover{background:#fafbff}
-td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
-.pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:600}
-.pill.good{background:var(--goodbg);color:var(--good)}
-.pill.bad{background:var(--badbg);color:var(--bad)}
-.pill.warn{background:var(--warnbg);color:var(--warn)}
-.pill.neutral{background:#eef0f7;color:var(--mute)}
-.gap{background:var(--warnbg);border:1px solid #f5d28a;color:#6b4a00;border-radius:10px;padding:12px 14px;font-size:13px}
-.note{color:var(--mute);font-size:12px;margin:12px 0 0;line-height:1.5}
-.scroll{overflow-x:auto}
-nav.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-nav.tabs a{background:rgba(255,255,255,.15);color:#fff;text-decoration:none;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600}
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resumo semanal dos turnos · 25/10 a 31/10/2026</title>
+<style>
+  :root{--navy:#0e2a4a;--navy2:#1b4272;--yellow:#ffe14d;--ink:#1d2733;--muted:#6b7785;--line:#e3e8ef;--bg:#f4f6fa;--good:#1f8a4c;--good-bg:#e4f5ec;--bad:#c23a3a;--bad-bg:#fbe6e6;--warn:#b7791f;--warn-bg:#fdf3dc;--neutral:#55657a;--neutral-bg:#eaeef4}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.45}
+  header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:22px 28px 20px}
+  header .tag{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+  header h1{margin:0 0 4px;font-size:22px;font-weight:700} header .sub{opacity:.85;font-size:13px}
+  main{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:20px 28px 40px;max-width:1400px;margin:0 auto}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;grid-column:span 12;box-shadow:0 1px 2px rgba(14,42,74,.04)}
+  h2{font-size:16px;margin:0 0 10px;color:var(--navy)} h3{font-size:14px;margin:14px 0 6px;color:var(--navy2)}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;grid-column:span 12}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .kpi .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .kpi .val{font-size:22px;font-weight:700;color:var(--navy);margin-top:2px} .kpi .hint{font-size:12px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;background:#fafbfd}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+  .pill.good{background:var(--good-bg);color:var(--good)} .pill.bad{background:var(--bad-bg);color:var(--bad)}
+  .pill.warn{background:var(--warn-bg);color:var(--warn)} .pill.neutral{background:var(--neutral-bg);color:var(--neutral)}
+  .gap{background:var(--warn-bg);border-left:4px solid var(--warn);padding:10px 14px;border-radius:6px;margin:0 0 8px;font-size:13px}
+  .gap strong{color:var(--warn)}
+  .note{font-size:12px;color:var(--muted);margin-top:8px}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted);margin-top:8px}
+  .legend span{display:inline-flex;align-items:center;gap:6px} .legend i{display:inline-block;width:10px;height:10px;border-radius:3px}
+  .sw-good{background:var(--good)} .sw-bad{background:var(--bad)} .sw-neutral{background:var(--neutral)}
+  .shift-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .shift-head .meta{font-size:12px;color:var(--muted)} .ops{font-size:13px}
+  footer{max-width:1400px;margin:0 auto;padding:0 28px 30px;color:var(--muted);font-size:12px}
+  @media (max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
 </style></head><body>
 <header>
-  <span class="tag">Polaris · por turno</span>
-  <h1>Turnos T1 e T2 · 26/10 a 28/10/2026</h1>
-  <p>Time de Fulfillment · CAD BRSP10 · sem Meal Accuracy · sem hora a hora</p>
-  <nav class="tabs"><a href="#T1">T1 · rhsoares</a><a href="#T2">T2 · elarocha</a></nav>
+  <span class="tag">Polaris · Fulfillment · CAD BRSP10</span>
+  <h1>Resumo semanal dos turnos · 25/10 a 31/10/2026</h1>
+  <div class="sub">Semana MeLi (domingo 25/10 a sábado 31/10). Líderes: rhsoares (T1), elarocha (T2), wdossantos (T3). Metas: AT 95%, FS/SF 90%, erro BRSP10 0,17%.</div>
 </header>
 <main>
+  <section class="kpis">
+    <div class="kpi"><div class="lbl">AT médio · 3 turnos</div><div class="val">81,0%</div><div class="hint">Meta 95% · média dos dias</div></div>
+    <div class="kpi"><div class="lbl">FS no prazo · 3 turnos</div><div class="val">50%</div><div class="hint">Meta 90% · 78 de 156</div></div>
+    <div class="kpi"><div class="lbl">SF no prazo · 3 turnos</div><div class="val">7,3%</div><div class="hint">Meta 90% · 13 de 177</div></div>
+    <div class="kpi"><div class="lbl">Erro BRSP10</div><div class="val">sem dado</div><div class="hint">Sem fonte automática nesta tarefa</div></div>
+  </section>
   <section class="card">
-    <div class="gap"><strong>Pontos em aberto:</strong> a taxa de erro BRSP10 não tem fonte automática nesta consulta e está como "sem dado" nos dois turnos. A meta de AT usada é 95%; a ferramenta exibe 80% no cartão. Os dados são do período 26/10 a 28/10 (3 dias). Em T2, ext_maleoni aparece com AT 0% e sem atividade registrada; vale checar se é ausência ou falha de dado.</div>
+    <h2>1. Resumo dos turnos</h2>
+    <table><thead><tr><th>Turno</th><th>Líder</th><th>Horário</th><th class="num">AT médio</th><th class="num">FS no prazo</th><th class="num">SF no prazo</th><th class="num">Erro BRSP10</th></tr></thead>
+    <tbody><tr><td><strong>T1</strong></td><td>rhsoares</td><td>05:45 – 15:33</td><td class="num"><span class="pill bad">79,0%</span></td><td class="num"><span class="pill bad">22%</span> <span class="note">9 de 41</span></td><td class="num"><span class="pill bad">2,0%</span> <span class="note">1 de 51</span></td><td class="num"><span class="pill neutral">sem dado</span></td></tr><tr><td><strong>T2</strong></td><td>elarocha</td><td>14:30 – 00:03</td><td class="num"><span class="pill bad">85,9%</span></td><td class="num"><span class="pill bad">17%</span> <span class="note">9 de 53</span></td><td class="num"><span class="pill bad">1,5%</span> <span class="note">1 de 67</span></td><td class="num"><span class="pill neutral">sem dado</span></td></tr><tr><td><strong>T3</strong></td><td>wdossantos</td><td>23:00 – 07:50</td><td class="num"><span class="pill bad">78,2%</span></td><td class="num"><span class="pill good">97%</span> <span class="note">60 de 62</span></td><td class="num"><span class="pill bad">18,6%</span> <span class="note">11 de 59</span></td><td class="num"><span class="pill neutral">sem dado</span></td></tr></tbody></table>
+    <div class="legend"><span><i class="sw-good"></i>Dentro da meta</span><span><i class="sw-bad"></i>Abaixo da meta</span><span><i class="sw-neutral"></i>Sem dado</span></div>
   </section>
-
   <section class="card">
-    <h2>Resumo dos turnos <small>26/10 a 28/10/2026 · CAD BRSP10</small></h2>
-    <div class="scroll"><table>
-      <thead><tr><th>Turno</th><th>Líder</th><th class="num">AT médio</th><th class="num">Fast start no prazo</th><th class="num">Strong finish no prazo</th><th class="num">Taxa de erro BRSP10</th></tr></thead>
-      <tbody>
-<tr><td><strong>T1</strong> <small>05:45–15:33</small></td><td>rhsoares</td><td class="num">86%</td><td class="num">4 de 24 (16,7%)</td><td class="num">0 de 20 (0%)</td><td class="num">sem dado</td></tr>
-<tr><td><strong>T2</strong> <small>14:30–00:03</small></td><td>elarocha</td><td class="num">92%</td><td class="num">4 de 26 (15,4%)</td><td class="num">0 de 34 (0%)</td><td class="num">sem dado</td></tr>
-      </tbody>
-    </table></div>
-    <p class="note">Meta AT 95%, FS/SF 90%, erro 0,17%. Detalhes por turno abaixo.</p>
+    <h2>2. Pontos em aberto</h2>
+    <div class="gap"><strong>Erro BRSP10 por operador:</strong> sem dado. Não há fonte automática nesta tarefa; nenhum valor foi estimado.</div>
+    <div class="gap"><strong>Filtro CAD BRSP10:</strong> as ferramentas do Polaris não expõem filtro de site. Os valores são os retornados por líder e dia; se o líder atender outros CADs, a produtividade pode incluir esses dados.</div>
+    <div class="gap"><strong>Meal Accuracy:</strong> excluído dos totais de produtividade.</div>
+    <div class="gap"><strong>AT de 25/10:</strong> T3 retornou 0% para todos os 9 operadores, e T1 e T2 tiveram médias de 16% e 43%. Valores mantidos como retornados; a média semanal inclui esse dia.</div>
+    <div class="gap"><strong>Produtividade:</strong> unidades e horas somadas nos 7 dias por processo; efetiva = unidades ÷ horas efetivas, neta = unidades ÷ horas do processo. Processos sem unidades no período foram omitidos. A meta mostrada é a média das metas retornadas.</div>
+    <div class="gap"><strong>Meta de AT:</strong> 95%, conforme a regra desta tarefa. O cartão da ferramenta usa 80%.</div>
+    <div class="gap"><strong>Layout de referência:</strong> o arquivo polaris-resumo-turnos-01a17-10.html estava fora das pastas conectadas e não pôde ser lido; o layout foi montado a partir da especificação.</div>
   </section>
-
-  <section class="card" id="T1">
-    <h2>T1 · rhsoares <small>turno 05:45–15:33 · 26/10 a 28/10</small></h2>
-    <div class="kpis">
-      <div class="kpi"><div class="v">86%</div><div class="l">AT médio dos operadores (24 reps)</div><div class="s"><span class="pill bad">Meta 95%</span> 13 abaixo da meta</div></div>
-      <div class="kpi"><div class="v">16,7%</div><div class="l">Fast start no prazo (4 de 24)</div><div class="s"><span class="pill bad">Meta 90%</span></div></div>
-      <div class="kpi"><div class="v">0%</div><div class="l">Strong finish no prazo (0 de 20)</div><div class="s"><span class="pill bad">Meta 90%</span></div></div>
-      <div class="kpi"><div class="v">sem dado</div><div class="l">Taxa de erro BRSP10</div><div class="s"><span class="pill neutral">Meta 0,17%</span></div></div>
-    </div>
-  </section>
-
+  
   <section class="card">
-    <h2>Produtividade por processo <small>26/10 a 28/10 · média da equipe no período</small></h2>
-    <div class="scroll"><table>
-      <thead><tr><th>Processo</th><th class="num">Efetiva</th><th class="num">Meta efetiva</th><th class="num">% meta efetiva</th><th class="num">Neta</th><th class="num">Meta neta</th><th class="num">% meta neta</th></tr></thead>
-      <tbody>
-<tr><td><strong>cycle_count</strong></td><td class="num">177,5</td><td class="num">187,8</td><td class="num"><span class="pill warn">94%</span></td><td class="num">114,1</td><td class="num">131,5</td><td class="num"><span class="pill warn">87%</span></td></tr>
-<tr><td><strong>inbound_audit</strong></td><td class="num">149,8</td><td class="num">144,9</td><td class="num"><span class="pill good">103%</span></td><td class="num">114,2</td><td class="num">113,0</td><td class="num"><span class="pill good">101%</span></td></tr>
-<tr><td><strong>movable_audit</strong></td><td class="num">294,2</td><td class="num">295,7</td><td class="num"><span class="pill warn">99%</span></td><td class="num">144,1</td><td class="num">172,6</td><td class="num"><span class="pill bad">83%</span></td></tr>
-<tr><td><strong>stock_audit</strong></td><td class="num">67,3</td><td class="num">63,0</td><td class="num"><span class="pill good">107%</span></td><td class="num">62,2</td><td class="num">53,2</td><td class="num"><span class="pill good">117%</span></td></tr>
-<tr><td><strong>corrective_count</strong></td><td class="num">28,2</td><td class="num">29,1</td><td class="num"><span class="pill warn">97%</span></td><td class="num">23,9</td><td class="num">26,4</td><td class="num"><span class="pill warn">90%</span></td></tr>
-<tr><td><strong>open_transfer</strong></td><td class="num">159,4</td><td class="num">87,5</td><td class="num"><span class="pill good">182%</span></td><td class="num">69,2</td><td class="num">47,8</td><td class="num"><span class="pill good">145%</span></td></tr>
-      </tbody>
-    </table></div>
-    <p class="note">Efetiva = unidades ÷ horas efetivas. Neta = unidades ÷ horas do processo. Valores da ferramenta get_productivity (modo macro, 26/10 a 28/10). Processos sem produção no período (checkin, inventory, lost_found, stagein) não aparecem.</p>
+    <div class="shift-head"><h2>T1 · rhsoares · 05:45 – 15:33</h2><span class="meta">Produtividade, AT, FS/SF e erro por operador</span></div>
+    <h3>Produtividade por processo (semana, sem meal accuracy)</h3>
+    <table><thead><tr><th>Processo</th><th class="num">Unidades</th><th class="num">Horas efetivas</th><th class="num">Efetiva (u/h)</th><th class="num">Meta efetiva</th><th class="num">Neta (u/h)</th><th class="num">Meta neta</th><th>Situação</th></tr></thead>
+    <tbody><tr><td>corrective_count</td><td class="num">1525</td><td class="num">58,9</td><td class="num">25,9</td><td class="num">29,1</td><td class="num">22,2</td><td class="num">26,4</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>cycle_count</td><td class="num">16403</td><td class="num">90,6</td><td class="num">181,0</td><td class="num">187,8</td><td class="num">126,8</td><td class="num">131,4</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>inbound_audit</td><td class="num">22864</td><td class="num">140,8</td><td class="num">162,4</td><td class="num">146,3</td><td class="num">123,6</td><td class="num">113,8</td><td><span class="pill good">acima</span></td></tr><tr><td>movable_audit</td><td class="num">6882</td><td class="num">22,3</td><td class="num">308,9</td><td class="num">295,7</td><td class="num">184,6</td><td class="num">173,4</td><td><span class="pill good">acima</span></td></tr><tr><td>open_transfer</td><td class="num">1270</td><td class="num">12,4</td><td class="num">102,5</td><td class="num">85,9</td><td class="num">50,7</td><td class="num">45,9</td><td><span class="pill good">acima</span></td></tr><tr><td>stock_audit</td><td class="num">5339</td><td class="num">83,7</td><td class="num">63,8</td><td class="num">63,0</td><td class="num">57,1</td><td class="num">53,2</td><td><span class="pill good">acima</span></td></tr></tbody></table>
+    <h3>AT diário (meta 95%) · média da semana 79,0%</h3>
+    <table><thead><tr><th>Dia</th><th class="num">AT médio</th><th>Situação</th><th>Operadores com AT mais baixo (até 4)</th></tr></thead><tbody><tr><td>25/10 (dom)</td><td class="num">16,1%</td><td><span class="pill bad">abaixo</span></td><td class="ops">arirferreira 0%, cjaguiar 0%, josecsi 0%, kersantos 0%</td></tr><tr><td>26/10 (seg)</td><td class="num">90,2%</td><td><span class="pill bad">abaixo</span></td><td class="ops">luizcadasilv 28%, edrodrigues 92%, josecsi 94%</td></tr><tr><td>27/10 (ter)</td><td class="num">91,0%</td><td><span class="pill bad">abaixo</span></td><td class="ops">luizcadasilv 27%, edrodrigues 49%, lucdsilva 76%, alidossantos 88%</td></tr><tr><td>28/10 (qua)</td><td class="num">88,5%</td><td><span class="pill bad">abaixo</span></td><td class="ops">romarrodrigu 26%, lucdsilva 71%, edrodrigues 76%, giobezerra 80%</td></tr><tr><td>29/10 (qui)</td><td class="num">91,1%</td><td><span class="pill bad">abaixo</span></td><td class="ops">ysxavier 37%, lucdsilva 74%, edrodrigues 77%, alidossantos 78%</td></tr><tr><td>30/10 (sex)</td><td class="num">95,1%</td><td><span class="pill good">na meta</span></td><td class="ops">lucdsilva 76%, alidossantos 78%, edrodrigues 91%, hugsreis 92%</td></tr><tr><td>31/10 (sáb)</td><td class="num">81,3%</td><td><span class="pill bad">abaixo</span></td><td class="ops">kersantos 0%, lucdsilva 76%, edevangelist 82%, hugsreis 94%</td></tr></tbody></table>
+    <h3>FS e SF no prazo por dia (meta 90%)</h3>
+    <table><thead><tr><th>Dia</th><th class="num">FS no prazo</th><th class="num">SF no prazo</th></tr></thead><tbody><tr><td>25/10 (dom)</td><td class="num">2 de 5 (40%)</td><td class="num">sem turno de SF</td></tr><tr><td>26/10 (seg)</td><td class="num">3 de 6 (50%)</td><td class="num">0 de 6 (0%)</td></tr><tr><td>27/10 (ter)</td><td class="num">1 de 10 (10%)</td><td class="num">0 de 2 (0%)</td></tr><tr><td>28/10 (qua)</td><td class="num">0 de 8 (0%)</td><td class="num">0 de 12 (0%)</td></tr><tr><td>29/10 (qui)</td><td class="num">0 de 3 (0%)</td><td class="num">1 de 15 (7%)</td></tr><tr><td>30/10 (sex)</td><td class="num">0 de 4 (0%)</td><td class="num">0 de 9 (0%)</td></tr><tr><td>31/10 (sáb)</td><td class="num">3 de 5 (60%)</td><td class="num">0 de 7 (0%)</td></tr><tr><td><strong>Semana</strong></td><td class="num"><strong>9 de 41 (22%)</strong></td><td class="num"><strong>1 de 51 (2,0%)</strong></td></tr></tbody></table>
+    <h3>Taxa de erro BRSP10 por operador</h3>
+    <p class="note">sem dado (sem fonte automática nesta tarefa).</p>
   </section>
-
   <section class="card">
-    <h2>AT por operador <small>meta 95% · 26/10 a 28/10</small></h2>
-    <div class="scroll"><table>
-      <thead><tr><th>Operador</th><th class="num">AT</th><th class="num">TND (h)</th><th class="num">EIT (h)</th><th>Situação e fichaje</th></tr></thead>
-      <tbody>
-<tr><td>romarrodrigu</td><td class="num">26%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>luizcadasilv</td><td class="num">27%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span> <small>1 COA (5 min)</small></td></tr>
-<tr><td>mugraciano</td><td class="num">64%</td><td class="num">0,01</td><td class="num">1,18</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>edrodrigues</td><td class="num">72%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>lucdsilva</td><td class="num">74%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>giobezerra</td><td class="num">80%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>ysxavier</td><td class="num">83%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>hugsreis</td><td class="num">92%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>alidossantos</td><td class="num">92%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>dajferreira</td><td class="num">93%</td><td class="num">0,00</td><td class="num">0,03</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>rlandim</td><td class="num">93%</td><td class="num">0,00</td><td class="num">0,27</td><td><span class="pill bad">Abaixo da meta</span> <small>1 CIA (0 min) · 1 COA (0 min)</small></td></tr>
-<tr><td>eedomingos</td><td class="num">93%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>davidcsouza</td><td class="num">93%</td><td class="num">1,44</td><td class="num">2,03</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>josecsi</td><td class="num">95%</td><td class="num">0,00</td><td class="num">0,29</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>rosmatos</td><td class="num">96%</td><td class="num">0,00</td><td class="num">0,06</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>edevangelist</td><td class="num">98%</td><td class="num">0,01</td><td class="num">3,47</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>emessantos</td><td class="num">99%</td><td class="num">0,00</td><td class="num">0,03</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>luchsantos</td><td class="num">99%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>kersantos</td><td class="num">99%</td><td class="num">0,05</td><td class="num">0,08</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>giosalmeida</td><td class="num">100%</td><td class="num">0,06</td><td class="num">0,07</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>mblima</td><td class="num">100%</td><td class="num">0,24</td><td class="num">0,09</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>antoniocar</td><td class="num">100%</td><td class="num">0,00</td><td class="num">0,02</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>cjaguiar</td><td class="num">100%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>arirferreira</td><td class="num">100%</td><td class="num">0,00</td><td class="num">1,41</td><td><span class="pill good">Na meta</span></td></tr>
-      </tbody>
-    </table></div>
+    <div class="shift-head"><h2>T2 · elarocha · 14:30 – 00:03</h2><span class="meta">Produtividade, AT, FS/SF e erro por operador</span></div>
+    <h3>Produtividade por processo (semana, sem meal accuracy)</h3>
+    <table><thead><tr><th>Processo</th><th class="num">Unidades</th><th class="num">Horas efetivas</th><th class="num">Efetiva (u/h)</th><th class="num">Meta efetiva</th><th class="num">Neta (u/h)</th><th class="num">Meta neta</th><th>Situação</th></tr></thead>
+    <tbody><tr><td>corrective_count</td><td class="num">2525</td><td class="num">79,0</td><td class="num">32,0</td><td class="num">29,1</td><td class="num">27,1</td><td class="num">26,4</td><td><span class="pill good">acima</span></td></tr><tr><td>cubing_and_product_data</td><td class="num">429</td><td class="num">15,8</td><td class="num">27,2</td><td class="num">25,3</td><td class="num">21,4</td><td class="num">18,2</td><td><span class="pill good">acima</span></td></tr><tr><td>cycle_count</td><td class="num">21846</td><td class="num">103,0</td><td class="num">212,0</td><td class="num">187,8</td><td class="num">161,4</td><td class="num">131,6</td><td><span class="pill good">acima</span></td></tr><tr><td>inbound_audit</td><td class="num">25194</td><td class="num">143,6</td><td class="num">175,5</td><td class="num">144,9</td><td class="num">149,0</td><td class="num">114,0</td><td><span class="pill good">acima</span></td></tr><tr><td>movable_audit</td><td class="num">8742</td><td class="num">33,3</td><td class="num">262,7</td><td class="num">295,7</td><td class="num">158,9</td><td class="num">173,4</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>open_transfer</td><td class="num">2372</td><td class="num">33,3</td><td class="num">71,1</td><td class="num">87,2</td><td class="num">51,8</td><td class="num">47,6</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>quarentine</td><td class="num">437</td><td class="num">12,1</td><td class="num">36,0</td><td class="num">42,0</td><td class="num">28,2</td><td class="num">40,0</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>receiving</td><td class="num">6</td><td class="num">0,1</td><td class="num">44,4</td><td class="num">–</td><td class="num">3,7</td><td class="num">52,1</td><td><span class="pill neutral">sem meta</span></td></tr><tr><td>stock_audit</td><td class="num">3013</td><td class="num">44,8</td><td class="num">67,2</td><td class="num">63,0</td><td class="num">53,8</td><td class="num">53,3</td><td><span class="pill good">acima</span></td></tr></tbody></table>
+    <h3>AT diário (meta 95%) · média da semana 85,9%</h3>
+    <table><thead><tr><th>Dia</th><th class="num">AT médio</th><th>Situação</th><th>Operadores com AT mais baixo (até 4)</th></tr></thead><tbody><tr><td>25/10 (dom)</td><td class="num">43,3%</td><td><span class="pill bad">abaixo</span></td><td class="ops">hennunes 0%, romaximo 0%, lloerti 85%, evandrolsilv 88%</td></tr><tr><td>26/10 (seg)</td><td class="num">90,7%</td><td><span class="pill bad">abaixo</span></td><td class="ops">ext_maleoni 0%, lloerti 88%, francsateles 88%, jjssena 92%</td></tr><tr><td>27/10 (ter)</td><td class="num">97,3%</td><td><span class="pill good">na meta</span></td><td class="ops">francsateles 89%, lloerti 89%, afaerodrigue 90%, dacarmo 90%</td></tr><tr><td>28/10 (qua)</td><td class="num">89,3%</td><td><span class="pill bad">abaixo</span></td><td class="ops">ext_maleoni 0%, jackssantana 37%, cguatis 83%, francsateles 86%</td></tr><tr><td>29/10 (qui)</td><td class="num">93,4%</td><td><span class="pill bad">abaixo</span></td><td class="ops">hapinheiro 46%, clecastro 83%, lloerti 87%, francsateles 89%</td></tr><tr><td>30/10 (sex)</td><td class="num">91,0%</td><td><span class="pill bad">abaixo</span></td><td class="ops">michaelsasan 0%, marcosbabarr 87%, lloerti 88%, afaerodrigue 90%</td></tr><tr><td>31/10 (sáb)</td><td class="num">96,1%</td><td><span class="pill good">na meta</span></td><td class="ops">afaerodrigue 89%, jackssantana 93%, larissabsant 95%</td></tr></tbody></table>
+    <h3>FS e SF no prazo por dia (meta 90%)</h3>
+    <table><thead><tr><th>Dia</th><th class="num">FS no prazo</th><th class="num">SF no prazo</th></tr></thead><tbody><tr><td>25/10 (dom)</td><td class="num">3 de 3 (100%)</td><td class="num">sem turno de SF</td></tr><tr><td>26/10 (seg)</td><td class="num">0 de 7 (0%)</td><td class="num">0 de 10 (0%)</td></tr><tr><td>27/10 (ter)</td><td class="num">2 de 10 (20%)</td><td class="num">0 de 12 (0%)</td></tr><tr><td>28/10 (qua)</td><td class="num">2 de 9 (22%)</td><td class="num">0 de 12 (0%)</td></tr><tr><td>29/10 (qui)</td><td class="num">0 de 11 (0%)</td><td class="num">0 de 14 (0%)</td></tr><tr><td>30/10 (sex)</td><td class="num">1 de 8 (12%)</td><td class="num">1 de 12 (8%)</td></tr><tr><td>31/10 (sáb)</td><td class="num">1 de 5 (20%)</td><td class="num">0 de 7 (0%)</td></tr><tr><td><strong>Semana</strong></td><td class="num"><strong>9 de 53 (17%)</strong></td><td class="num"><strong>1 de 67 (1,5%)</strong></td></tr></tbody></table>
+    <h3>Taxa de erro BRSP10 por operador</h3>
+    <p class="note">sem dado (sem fonte automática nesta tarefa).</p>
   </section>
-
   <section class="card">
-    <h2>Fast start e strong finish por dia <small>no prazo / total</small></h2>
-    <div class="scroll"><table>
-      <thead><tr><th>Dia</th><th class="num">Fast start no prazo</th><th class="num">Strong finish no prazo</th></tr></thead>
-      <tbody>
-<tr><td>26/10</td><td class="num"><span class="pill warn">3 de 6 (50%)</span></td><td class="num"><span class="pill bad">0 de 6 (0%)</span></td></tr>
-<tr><td>27/10</td><td class="num"><span class="pill bad">1 de 10 (10%)</span></td><td class="num"><span class="pill bad">0 de 2 (0%)</span></td></tr>
-<tr><td>28/10</td><td class="num"><span class="pill bad">0 de 8 (0%)</span></td><td class="num"><span class="pill bad">0 de 12 (0%)</span></td></tr>
-      </tbody>
-    </table></div>
-    <p class="note">Maiores atrasos de fast start no período: luchsantos, kersantos, mugraciano, josecsi. Strong finish: kersantos, rosmatos, mugraciano, josecsi.</p>
+    <div class="shift-head"><h2>T3 · wdossantos · 23:00 – 07:50</h2><span class="meta">Produtividade, AT, FS/SF e erro por operador</span></div>
+    <h3>Produtividade por processo (semana, sem meal accuracy)</h3>
+    <table><thead><tr><th>Processo</th><th class="num">Unidades</th><th class="num">Horas efetivas</th><th class="num">Efetiva (u/h)</th><th class="num">Meta efetiva</th><th class="num">Neta (u/h)</th><th class="num">Meta neta</th><th>Situação</th></tr></thead>
+    <tbody><tr><td>corrective_count</td><td class="num">2355</td><td class="num">73,5</td><td class="num">32,0</td><td class="num">29,0</td><td class="num">27,8</td><td class="num">26,3</td><td><span class="pill good">acima</span></td></tr><tr><td>cycle_count</td><td class="num">11841</td><td class="num">78,7</td><td class="num">150,4</td><td class="num">187,8</td><td class="num">115,0</td><td class="num">131,8</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>inbound_audit</td><td class="num">16282</td><td class="num">128,9</td><td class="num">126,3</td><td class="num">146,1</td><td class="num">96,3</td><td class="num">113,8</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>movable_audit</td><td class="num">5829</td><td class="num">19,8</td><td class="num">293,8</td><td class="num">296,7</td><td class="num">217,0</td><td class="num">173,1</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>open_transfer</td><td class="num">1415</td><td class="num">38,8</td><td class="num">36,5</td><td class="num">86,8</td><td class="num">17,8</td><td class="num">47,3</td><td><span class="pill bad">abaixo</span></td></tr><tr><td>quarentine</td><td class="num">393</td><td class="num">8,3</td><td class="num">47,6</td><td class="num">42,9</td><td class="num">42,0</td><td class="num">41,6</td><td><span class="pill good">acima</span></td></tr><tr><td>stock_audit</td><td class="num">2937</td><td class="num">45,7</td><td class="num">64,3</td><td class="num">62,9</td><td class="num">56,9</td><td class="num">53,2</td><td><span class="pill good">acima</span></td></tr></tbody></table>
+    <h3>AT diário (meta 95%) · média da semana 78,2%</h3>
+    <table><thead><tr><th>Dia</th><th class="num">AT médio</th><th>Situação</th><th>Operadores com AT mais baixo (até 4)</th></tr></thead><tbody><tr><td>25/10 (dom)</td><td class="num">0,0%</td><td><span class="pill bad">abaixo</span></td><td class="ops">cafaraujo 0%, carlosedalme 0%, dimoreira 0%, eduardogsilv 0%</td></tr><tr><td>26/10 (seg)</td><td class="num">76,9%</td><td><span class="pill bad">abaixo</span></td><td class="ops">dimoreira 0%, wglaurang 0%, rirbbatista 13%, evdemelo 87%</td></tr><tr><td>27/10 (ter)</td><td class="num">96,3%</td><td><span class="pill good">na meta</span></td><td class="ops">lucianamsilv 76%, cafaraujo 78%, evdemelo 88%, luipires 88%</td></tr><tr><td>28/10 (qua)</td><td class="num">97,7%</td><td><span class="pill good">na meta</span></td><td class="ops">evdemelo 84%, luipires 87%, dimoreira 91%</td></tr><tr><td>29/10 (qui)</td><td class="num">98,0%</td><td><span class="pill good">na meta</span></td><td class="ops">luipires 87%, evdemelo 87%, alqsouza 92%, dimoreira 92%</td></tr><tr><td>30/10 (sex)</td><td class="num">91,6%</td><td><span class="pill bad">abaixo</span></td><td class="ops">sicarneiro 0%, evdemelo 87%</td></tr><tr><td>31/10 (sáb)</td><td class="num">87,0%</td><td><span class="pill bad">abaixo</span></td><td class="ops">evdemelo 0%</td></tr></tbody></table>
+    <h3>FS e SF no prazo por dia (meta 90%)</h3>
+    <table><thead><tr><th>Dia</th><th class="num">FS no prazo</th><th class="num">SF no prazo</th></tr></thead><tbody><tr><td>25/10 (dom)</td><td class="num">4 de 4 (100%)</td><td class="num">sem turno de SF</td></tr><tr><td>26/10 (seg)</td><td class="num">9 de 9 (100%)</td><td class="num">0 de 5 (0%)</td></tr><tr><td>27/10 (ter)</td><td class="num">14 de 14 (100%)</td><td class="num">3 de 7 (43%)</td></tr><tr><td>28/10 (qua)</td><td class="num">12 de 12 (100%)</td><td class="num">3 de 13 (23%)</td></tr><tr><td>29/10 (qui)</td><td class="num">12 de 12 (100%)</td><td class="num">2 de 12 (17%)</td></tr><tr><td>30/10 (sex)</td><td class="num">6 de 7 (86%)</td><td class="num">3 de 13 (23%)</td></tr><tr><td>31/10 (sáb)</td><td class="num">3 de 4 (75%)</td><td class="num">0 de 9 (0%)</td></tr><tr><td><strong>Semana</strong></td><td class="num"><strong>60 de 62 (97%)</strong></td><td class="num"><strong>11 de 59 (18,6%)</strong></td></tr></tbody></table>
+    <h3>Taxa de erro BRSP10 por operador</h3>
+    <p class="note">sem dado (sem fonte automática nesta tarefa).</p>
   </section>
-
   <section class="card">
-    <h2>Taxa de erro BRSP10 por operador <small>26/10 a 28/10</small></h2>
-    <div class="gap">Sem dado automático nesta consulta. A fonte é o dashboard Erros Operacionais (Grid); posso preencher se você quiser que eu puxe agora.</div>
-  </section>
-
-  <section class="card" id="T2">
-    <h2>T2 · elarocha <small>turno 14:30–00:03 · 26/10 a 28/10</small></h2>
-    <div class="kpis">
-      <div class="kpi"><div class="v">92%</div><div class="l">AT médio dos operadores (24 reps)</div><div class="s"><span class="pill bad">Meta 95%</span> 7 abaixo da meta</div></div>
-      <div class="kpi"><div class="v">15,4%</div><div class="l">Fast start no prazo (4 de 26)</div><div class="s"><span class="pill bad">Meta 90%</span></div></div>
-      <div class="kpi"><div class="v">0%</div><div class="l">Strong finish no prazo (0 de 34)</div><div class="s"><span class="pill bad">Meta 90%</span></div></div>
-      <div class="kpi"><div class="v">sem dado</div><div class="l">Taxa de erro BRSP10</div><div class="s"><span class="pill neutral">Meta 0,17%</span></div></div>
-    </div>
-  </section>
-
-  <section class="card">
-    <h2>Produtividade por processo <small>26/10 a 28/10 · média da equipe no período</small></h2>
-    <div class="scroll"><table>
-      <thead><tr><th>Processo</th><th class="num">Efetiva</th><th class="num">Meta efetiva</th><th class="num">% meta efetiva</th><th class="num">Neta</th><th class="num">Meta neta</th><th class="num">% meta neta</th></tr></thead>
-      <tbody>
-<tr><td><strong>cycle_count</strong></td><td class="num">211,8</td><td class="num">187,8</td><td class="num"><span class="pill good">113%</span></td><td class="num">165,4</td><td class="num">131,5</td><td class="num"><span class="pill good">126%</span></td></tr>
-<tr><td><strong>inbound_audit</strong></td><td class="num">187,8</td><td class="num">144,9</td><td class="num"><span class="pill good">130%</span></td><td class="num">161,3</td><td class="num">113,0</td><td class="num"><span class="pill good">143%</span></td></tr>
-<tr><td><strong>movable_audit</strong></td><td class="num">255,6</td><td class="num">295,7</td><td class="num"><span class="pill bad">86%</span></td><td class="num">160,8</td><td class="num">172,6</td><td class="num"><span class="pill warn">93%</span></td></tr>
-<tr><td><strong>stock_audit</strong></td><td class="num">116,7</td><td class="num">63,0</td><td class="num"><span class="pill good">185%</span></td><td class="num">53,3</td><td class="num">53,2</td><td class="num"><span class="pill good">100%</span></td></tr>
-<tr><td><strong>corrective_count</strong></td><td class="num">33,8</td><td class="num">29,1</td><td class="num"><span class="pill good">116%</span></td><td class="num">28,2</td><td class="num">26,5</td><td class="num"><span class="pill good">107%</span></td></tr>
-<tr><td><strong>cubing_and_product_data</strong></td><td class="num">27,4</td><td class="num">25,3</td><td class="num"><span class="pill good">109%</span></td><td class="num">21,6</td><td class="num">18,2</td><td class="num"><span class="pill good">119%</span></td></tr>
-<tr><td><strong>open_transfer</strong></td><td class="num">73,5</td><td class="num">87,5</td><td class="num"><span class="pill bad">84%</span></td><td class="num">52,7</td><td class="num">47,1</td><td class="num"><span class="pill good">112%</span></td></tr>
-<tr><td><strong>quarentine</strong></td><td class="num">12,2</td><td class="num">42,9</td><td class="num"><span class="pill bad">28%</span></td><td class="num">9,3</td><td class="num">37,4</td><td class="num"><span class="pill bad">25%</span></td></tr>
-<tr><td><strong>receiving</strong></td><td class="num">44,4</td><td class="num">sem meta</td><td class="num">—</td><td class="num">2,8</td><td class="num">52,1</td><td class="num"><span class="pill bad">5%</span></td></tr>
-      </tbody>
-    </table></div>
-    <p class="note">Efetiva = unidades ÷ horas efetivas. Neta = unidades ÷ horas do processo. Valores da ferramenta get_productivity (modo macro, 26/10 a 28/10). Processos sem produção no período (checkin, inventory, lost_found, outbound_support_management) não aparecem.</p>
-  </section>
-
-  <section class="card">
-    <h2>AT por operador <small>meta 95% · 26/10 a 28/10</small></h2>
-    <div class="scroll"><table>
-      <thead><tr><th>Operador</th><th class="num">AT</th><th class="num">TND (h)</th><th class="num">EIT (h)</th><th>Situação e fichaje</th></tr></thead>
-      <tbody>
-<tr><td>ext_maleoni</td><td class="num">0%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span> <small>possível dado incompleto</small></td></tr>
-<tr><td>jackssantana</td><td class="num">68%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span> <small>1 CIA (0 min)</small></td></tr>
-<tr><td>francsateles</td><td class="num">88%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>lloerti</td><td class="num">89%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>afaerodrigue</td><td class="num">89%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>cguatis</td><td class="num">91%</td><td class="num">0,00</td><td class="num">0,36</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>dacarmo</td><td class="num">91%</td><td class="num">0,00</td><td class="num">0,52</td><td><span class="pill bad">Abaixo da meta</span></td></tr>
-<tr><td>jjssena</td><td class="num">96%</td><td class="num">0,00</td><td class="num">0,07</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>marcosbabarr</td><td class="num">98%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>hennunes</td><td class="num">98%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>clecastro</td><td class="num">98%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>oaosansantos</td><td class="num">98%</td><td class="num">0,00</td><td class="num">0,44</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>hapinheiro</td><td class="num">98%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>fabmsantos</td><td class="num">99%</td><td class="num">0,00</td><td class="num">0,33</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>scicerosi</td><td class="num">99%</td><td class="num">0,00</td><td class="num">0,33</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>pdjunior</td><td class="num">99%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>alicesmorais</td><td class="num">99%</td><td class="num">0,00</td><td class="num">0,28</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>larissabsant</td><td class="num">99%</td><td class="num">0,00</td><td class="num">0,17</td><td><span class="pill good">Na meta</span> <small>1 CIA (0 min) · 1 COA (0 min)</small></td></tr>
-<tr><td>ycfreire</td><td class="num">99%</td><td class="num">0,00</td><td class="num">0,68</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>romaximo</td><td class="num">100%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>comenezes</td><td class="num">100%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>mauricolivei</td><td class="num">100%</td><td class="num">0,00</td><td class="num">0,59</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>jhonatacsant</td><td class="num">100%</td><td class="num">0,00</td><td class="num">0,00</td><td><span class="pill good">Na meta</span></td></tr>
-<tr><td>evandrolsilv</td><td class="num">101%</td><td class="num">0,00</td><td class="num">0,16</td><td><span class="pill good">Na meta</span></td></tr>
-      </tbody>
-    </table></div>
-  </section>
-
-  <section class="card">
-    <h2>Fast start e strong finish por dia <small>no prazo / total</small></h2>
-    <div class="scroll"><table>
-      <thead><tr><th>Dia</th><th class="num">Fast start no prazo</th><th class="num">Strong finish no prazo</th></tr></thead>
-      <tbody>
-<tr><td>26/10</td><td class="num"><span class="pill bad">0 de 7 (0%)</span></td><td class="num"><span class="pill bad">0 de 10 (0%)</span></td></tr>
-<tr><td>27/10</td><td class="num"><span class="pill bad">2 de 10 (20%)</span></td><td class="num"><span class="pill bad">0 de 12 (0%)</span></td></tr>
-<tr><td>28/10</td><td class="num"><span class="pill bad">2 de 9 (22%)</span></td><td class="num"><span class="pill bad">0 de 12 (0%)</span></td></tr>
-      </tbody>
-    </table></div>
-    <p class="note">Maiores atrasos de fast start: 26/10 jhonatacsant e jjssena; 27/10 mauricolivei e oaosansantos; 28/10 cguatis, jjssena e oaosansantos. Strong finish: 26/10 romaximo e jjssena; 27/10 scicerosi e oaosansantos; 28/10 scicerosi e oaosansantos.</p>
-  </section>
-
-  <section class="card">
-    <h2>Taxa de erro BRSP10 por operador <small>26/10 a 28/10</small></h2>
-    <div class="gap">Sem dado automático nesta consulta. A fonte é o dashboard Erros Operacionais (Grid); posso preencher se você quiser que eu puxe agora.</div>
+    <h2>Legenda</h2>
+    <div class="legend"><span><i class="sw-good"></i>Dentro da meta</span><span><i class="sw-bad"></i>Abaixo da meta</span><span><i class="sw-neutral"></i>Sem dado</span></div>
+    <p class="note">Fontes: get_productivity (modo macro, include_schedule), get_available_time e get_fast_start_strong_finish, consultados por líder e dia. Período 25/10 a 31/10/2026.</p>
   </section>
 </main>
+<footer>Gerado pelo Polaris.</footer>
 </body></html>
